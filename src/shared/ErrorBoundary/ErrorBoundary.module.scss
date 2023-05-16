@@ -1,0 +1,49 @@
+@import 'src/assets/styles/mixins';
+
+.root {
+  padding: 5px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--error);
+}
+
+.details {
+  position: relative;
+}
+
+.summary {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition-duration);
+
+  @media (hover) {
+    &:hover,
+    &:focus-visible {
+      color: var(--error);
+    }
+  }
+}
+
+.desc {
+  position: absolute;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+  &Inner {
+    overflow: auto;
+    padding-right: 5px;
+    max-height: 200px;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--error);
+    @include scrollbar(5px, var(--primary), var(--light), 5px, 5px);
+  }
+}
