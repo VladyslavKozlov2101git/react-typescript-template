@@ -2,11 +2,11 @@ import { FC } from 'react';
 import styles from './{{name}}.module.scss';
 
 interface {{name}}Props {
-  text: string;
+  className?: string;
 }
 
-const {{name}}: FC<{{name}}Props> = (props) => {
-  return <div className={styles.root}>{/* JSX code */}</div>;
+const {{name}}: FC<{{name}}Props> = ({className=""}) => {
+  return <div className={`${styles.root} ${className}`}>{{name}}</div>;
 };
 
 export default {{name}};
