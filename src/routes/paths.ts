@@ -4,6 +4,7 @@ export const rootMainPath = '/main';
 export const mainPath = {
     invoices: { path: `${rootMainPath}/invoices`, slug: "/invoices", name: 'Invoices' },
     dashboard: { path: `${rootMainPath}/dashboard`, slug: "/dashboard", name: 'Dashboard' },
+    users: { path: `${rootMainPath}/users`, slug: "/users", name: 'Users' },
 };
 
 export const authPath = {

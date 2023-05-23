@@ -6,6 +6,7 @@ import InvoiceSingle from '../shared/InvoiceSingle';
 import Home from '../shared/Home';
 import { authPath, mainPath } from './paths';
 import PageNotFound from '../shared/PageNotFound';
+import Users from '../features/Users';
 
 interface MainRoutes {
   props?: string;
@@ -32,6 +33,8 @@ const MainRoutes: FC<MainRoutes> = () => {
         <Route index element={<Invoices />} />
         <Route path=":id" element={<InvoiceSingle />} />
       </Route>
+
+      <Route path={mainPath.users.path} element={<Users />} />
 
       <Route path={'/404'} element={<PageNotFound />} />
       <Route path="*" element={<Navigate replace to="/404" />} />

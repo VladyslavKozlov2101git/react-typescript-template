@@ -5,8 +5,9 @@
 # WHAT I NEED TO DO
 
 - REDUX TOOLKIT
-- REACT ROUTER DOM
+
 - AXIOS SETTINGS
 
+* REACT ROUTER DOM
 * fonts
 * scss styles
