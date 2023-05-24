@@ -1,23 +1,34 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import styles from './Users.module.scss';
 import MainContainer from '../../containers/MainContainer';
 import { useAppDispatch, useAppSelector } from '../../app/reduxHooks';
-import { usersSlice } from './slice/UsersSlice';
+import { fetchUsers } from './slice/UsersActions';
 
 interface UsersProps {
   className?: string;
 }
 
 const Users: FC<UsersProps> = ({ className = '' }) => {
-  const count = useAppSelector((state) => state.usersReducer.count);
-  const { increment } = usersSlice.actions;
+  const { isLoading, error, users } = useAppSelector((state) => state.usersReducer);
+
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+
+  console.log(users);
 
   return (
     <MainContainer>
       <div className={`${styles.root} ${className}`}>
-        <div>Counter: {count}</div>
-        <button onClick={() => dispatch(increment(5))}>Add +1</button>
+        {isLoading && <div>Loading...</div>}
+        {error && <h3>{error}</h3>}
+        <ul>
+          {users.map((user) => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
       </div>
     </MainContainer>
   );

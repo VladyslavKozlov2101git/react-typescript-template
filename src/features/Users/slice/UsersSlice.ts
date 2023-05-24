@@ -1,18 +1,19 @@
 
 import { User } from "../../../models/User.model"
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { fetchUsers } from "./UsersActions";
 
 
 
 interface UsersState {
-    user: User[];
+    users: User[];
     isLoading: boolean;
     error: string;
     count: number;
 }
 
 const initialState: UsersState = {
-    user: [],
+    users: [],
     isLoading: false,
     error: "",
     count: 0
@@ -22,7 +23,22 @@ export const usersSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        increment(state, action: PayloadAction<number>) { state.count += action.payload },
+
+    },
+    extraReducers: {
+        [fetchUsers.fulfilled.type]: (state, action: PayloadAction<User[]>) => {
+            state.isLoading = false,
+                state.error = "",
+                state.users = action.payload
+        },
+        [fetchUsers.pending.type]: (state) => {
+            state.isLoading = true
+
+        },
+        [fetchUsers.rejected.type]: (state, action: PayloadAction<string>) => {
+            state.isLoading = false,
+                state.error = action.payload
+        }
     }
 })
 
