@@ -1,0 +1,16 @@
+.root {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #235971;
+  .navigation {
+    margin-left: auto;
+    padding: 16px;
+    display: flex;
+    gap: 15px;
+    a {
+      color: azure;
+    }
+  }
+}

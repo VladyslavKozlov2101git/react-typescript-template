@@ -2,6 +2,8 @@ import { FC, ReactNode, useEffect } from 'react';
 import styles from './MainContainer.module.scss';
 import { useNavigate } from 'react-router';
 import { authPath } from '../../routes/paths';
+import Header from '../../layouts/Header';
+import Footer from '../../layouts/Footer';
 
 interface MainContainerProps {
   className?: string;
@@ -19,9 +21,9 @@ const MainContainer: FC<MainContainerProps> = ({ className = '', children }) => 
 
   return (
     <>
-      <header className={styles.header}>Header</header>
+      <Header />
       <main className={`${styles.root} ${className} `}>{children}</main>
-      <footer className={styles.footer}>Footer</footer>
+      <Footer />
     </>
   );
 };

@@ -1,9 +1,6 @@
 import { FC } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Dashboard from '../shared/Dashboard';
-import Invoices from '../shared/Invoices';
-import InvoiceSingle from '../shared/InvoiceSingle';
-import Home from '../shared/Home';
+import Dashboard from '../features/Dashboard';
 import { authPath, mainPath } from './paths';
 import PageNotFound from '../shared/PageNotFound';
 import Users from '../features/Users';
@@ -26,12 +23,12 @@ const MainRoutes: FC<MainRoutes> = () => {
           )
         }
       />
-      <Route path={authPath.signIn.path} element={<Home />} />
+      <Route path={authPath.signIn.path} element={<Dashboard />} />
 
       <Route path={mainPath.dashboard.path} element={<Dashboard />} />
       <Route path={mainPath.invoices.path}>
-        <Route index element={<Invoices />} />
-        <Route path=":id" element={<InvoiceSingle />} />
+        {/* <Route index element={<Invoices />} />
+        <Route path=":id" element={<InvoiceSingle />} /> */}
       </Route>
 
       <Route path={mainPath.users.path} element={<Users />} />
