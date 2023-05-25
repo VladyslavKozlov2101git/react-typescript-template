@@ -141,3 +141,21 @@ $xxl: 1400px; // 87.5em / large desktop
 .visually-hidden {
   @extend %visuallyHidden;
 }
+
+@mixin fontOptions($option: medium, $weight: 300) {
+  @if $option == small {
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: $weight;
+  } @else if $option == medium {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: $weight;
+  } @else if $option == large {
+    font-size: 65px;
+    line-height: 79px;
+    font-weight: $weight;
+  } @else {
+    @error "Invalid font option: #{$option}. Please choose from small, medium, or large.";
+  }
+}

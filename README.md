@@ -13,7 +13,7 @@
 
 * ADD custom hooks and functions
 
-1. useDebounce
-2. useClickOutside
-3. useToggle
-4. etc
+1. useDebounceuseDeferredValue example with Suspence and search
+   +. useClickOutside
+   +. useToggle
+2. etc
