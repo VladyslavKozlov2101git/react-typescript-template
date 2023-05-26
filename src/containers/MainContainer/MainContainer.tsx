@@ -22,7 +22,7 @@ const MainContainer: FC<MainContainerProps> = ({ className = '', children }) => 
   return (
     <>
       <Header />
-      <main className={`${styles.root} ${className} `}>{children}</main>
+      <main className={`${styles.root} ${className} container`}>{children}</main>
       <Footer />
     </>
   );
