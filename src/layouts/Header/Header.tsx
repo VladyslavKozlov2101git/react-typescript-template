@@ -21,6 +21,9 @@ const Header: FC<HeaderProps> = ({ className = '' }) => {
           <li>
             <NavLink to={mainPath.examples.path}>{mainPath.examples.name}</NavLink>
           </li>
+          <li>
+            <NavLink to={mainPath.recomendations.path}>{mainPath.recomendations.name}</NavLink>
+          </li>
         </nav>
       </div>
     </header>

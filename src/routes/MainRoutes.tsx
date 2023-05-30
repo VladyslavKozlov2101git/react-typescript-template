@@ -5,6 +5,7 @@ import { authPath, mainPath } from './paths';
 import PageNotFound from '../shared/PageNotFound';
 import Users from '../features/Users';
 import Examples from '../features/Examples';
+import Recomendations from '../features/Recomendations';
 
 interface MainRoutes {
   props?: string;
@@ -24,12 +25,12 @@ const MainRoutes: FC<MainRoutes> = () => {
           )
         }
       />
-      <Route path={authPath.signIn.path} element={<Dashboard />} />
 
+      <Route path={authPath.signIn.path} element={<Dashboard />} />
       <Route path={mainPath.dashboard.path} element={<Dashboard />} />
       <Route path={mainPath.examples.path} element={<Examples />} />
+      <Route path={mainPath.recomendations.path} element={<Recomendations />} />
       <Route path={mainPath.invoices.path}></Route>
-
       <Route path={mainPath.users.path} element={<Users />} />
 
       <Route path={'/404'} element={<PageNotFound />} />

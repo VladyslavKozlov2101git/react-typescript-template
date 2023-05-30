@@ -1,0 +1,19 @@
+@import 'src/assets/styles/mixins';
+.root {
+  display: flex;
+  .button {
+    height: 40px;
+    min-width: 160px;
+    padding: 5px 20px;
+    border: 2px solid #235971;
+  }
+  .outside {
+    position: relative;
+  }
+  .list {
+    position: absolute;
+    min-width: 160px;
+    background: #f1f1f1;
+    border: 1px solid #235971;
+  }
+}

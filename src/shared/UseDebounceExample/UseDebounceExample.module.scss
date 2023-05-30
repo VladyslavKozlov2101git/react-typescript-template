@@ -1,0 +1,21 @@
+@import 'src/assets/styles/mixins';
+.root {
+  display: flex;
+  flex-direction: column;
+  .title {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .input {
+    margin-top: 16px;
+    max-width: 480px;
+    height: 48px;
+    border-radius: 12px;
+    border: 1px solid black;
+    background: transparent;
+    color: black;
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+}

@@ -1,6 +1,8 @@
 import React, { useEffect, RefObject, useState, useRef, useCallback } from "react";
 
 
+
+
 export function useOnClickOutside<T extends HTMLElement>(
     ref: RefObject<T>,
     handler: (event: MouseEvent | TouchEvent) => void
@@ -25,36 +27,24 @@ export function useOnClickOutside<T extends HTMLElement>(
 }
 
 
-export const useDebounce = <T>(value: T, delay: number): T => {
-    const [debouncedValue, setDebouncedValue] = useState<T>(value);
+export function useDebounce<T>(value: T, delay?: number): T {
+    const [debouncedValue, setDebouncedValue] = useState<T>(value)
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setDebouncedValue(value);
-        }, delay);
+        const timer = setTimeout(() => setDebouncedValue(value), delay || 500)
 
         return () => {
-            clearTimeout(timer);
-        };
-    }, [value, delay]);
+            clearTimeout(timer)
+        }
+    }, [value, delay])
 
-    return debouncedValue;
-};
+    return debouncedValue
+}
 
-//EXAMPLE useDebounce
 
-// const [searchTerm, setSearchTerm] = useState('');
-// const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-// const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-//   setSearchTerm(event.target.value);
-// }, []);
 
-// useEffect(() => {
-//   // Perform search or any other action with debouncedSearchTerm
-//   // This effect will run only after 500 milliseconds of inactivity
-//   console.log('Performing search with debounced term:', debouncedSearchTerm);
-// }, [debouncedSearchTerm]);
+
 
 
 
