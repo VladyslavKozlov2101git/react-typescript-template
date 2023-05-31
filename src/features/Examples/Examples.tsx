@@ -25,6 +25,10 @@ const Examples: FC<ExamplesProps> = ({ className = '' }) => {
         <UseDebounceExample />
 
         <h3 className="mt16">3. useDeferredValue hook</h3>
+        <i>
+          Загалом, <b>useDeferredValue</b> корисний, коли вам потрібно забезпечити плавну
+          інтерактивність, зменшити зайві рендери та оптимізувати продуктивність в деяких ситуаціях.
+        </i>
         <UseDeferredValueExample />
       </div>
     </MainContainer>
