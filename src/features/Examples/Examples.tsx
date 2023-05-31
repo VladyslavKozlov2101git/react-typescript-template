@@ -1,7 +1,11 @@
 import { FC } from 'react';
 import styles from './Examples.module.scss';
 import MainContainer from '../../containers/MainContainer';
-import { UseOnClickOutsideExample, UseDebounceExample } from '../../shared/index';
+import {
+  UseOnClickOutsideExample,
+  UseDebounceExample,
+  UseDeferredValueExample,
+} from '../../shared/index';
 
 interface ExamplesProps {
   className?: string;
@@ -18,8 +22,10 @@ const Examples: FC<ExamplesProps> = ({ className = '' }) => {
         <UseOnClickOutsideExample />
 
         <h3 className="mt16">2. useDebounce hook</h3>
-
         <UseDebounceExample />
+
+        <h3 className="mt16">3. useDeferredValue hook</h3>
+        <UseDeferredValueExample />
       </div>
     </MainContainer>
   );

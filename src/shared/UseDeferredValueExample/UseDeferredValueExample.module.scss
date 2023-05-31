@@ -1,0 +1,19 @@
+@import 'src/assets/styles/mixins';
+.root {
+  display: flex;
+}
+.input {
+  margin-top: 16px;
+  max-width: 480px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid black;
+  background: transparent;
+  color: black;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+.item {
+  margin: 8px 0;
+  padding-left: 8px;
+}
