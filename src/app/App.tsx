@@ -3,14 +3,13 @@ import '../assets/styles/main.scss';
 import { ErrorBoundary } from '../shared';
 import AppRoutes from '../routes/AppRoutes';
 import { Provider } from 'react-redux';
-import { setupStore } from './rootReducer';
+import { store } from './store';
 
 interface AppProps {
   props?: string;
 }
 
 const App: FC<AppProps> = (props) => {
-  const store = setupStore();
   return (
     <ErrorBoundary>
       <Provider store={store}>

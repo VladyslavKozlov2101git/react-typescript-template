@@ -17,8 +17,6 @@ const Users: FC<UsersProps> = ({ className = '' }) => {
     dispatch(fetchUsers());
   }, []);
 
-  console.log(users);
-
   return (
     <MainContainer>
       <div className={`${styles.root} ${className}`}>
