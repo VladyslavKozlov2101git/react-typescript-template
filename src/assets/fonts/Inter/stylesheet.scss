@@ -17,23 +17,6 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter Bold'), local('Inter-Bold'), url('Inter-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter ExtraBold'), local('Inter-ExtraBold'),
-    url('Inter-ExtraBold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
   src: local('Inter Black'), local('Inter-Black'), url('Inter-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
