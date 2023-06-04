@@ -1,30 +1,7 @@
 import { configureStore, Middleware } from "@reduxjs/toolkit";
 import { rootReducer } from "./rootReducer";
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { MiddlewareAPI, Dispatch, AnyAction } from 'redux';
+import axios from 'axios';
 
-
-
-
-const axiosInstance: AxiosInstance = axios.create();
-const axiosMiddleware: Middleware<any> = (store: MiddlewareAPI) => {
-    console.log(store, 78)
-    axiosInstance.interceptors.request.use((config: any) => {
-        return config;
-    }, (error) => {
-        return Promise.reject(error);
-    });
-    axiosInstance.interceptors.response.use((response: AxiosResponse) => {
-
-        return response;
-    }, (error) => {
-        return Promise.reject(error);
-    });
-
-    return (next: Dispatch<AnyAction>) => (action: AnyAction) => {
-        return next(action);
-    };
-};
 
 const authMiddleware: Middleware = () => (next) => (action) => {
     const token = localStorage.getItem("token");
@@ -41,7 +18,7 @@ export const setupStore = () => {
     return configureStore({
         reducer: rootReducer,
         middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware().concat(authMiddleware, axiosMiddleware),
+            getDefaultMiddleware().concat(authMiddleware),
     });
 };
 
