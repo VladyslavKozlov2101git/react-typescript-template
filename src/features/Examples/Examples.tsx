@@ -5,6 +5,7 @@ import {
   UseOnClickOutsideExample,
   UseDebounceExample,
   UseDeferredValueExample,
+  Skeleton,
 } from '../../shared/index';
 
 interface ExamplesProps {
@@ -30,6 +31,9 @@ const Examples: FC<ExamplesProps> = ({ className = '' }) => {
           інтерактивність, зменшити зайві рендери та оптимізувати продуктивність в деяких ситуаціях.
         </i>
         <UseDeferredValueExample />
+
+        <h2 className="mt16">Skeleton examples</h2>
+        <Skeleton />
       </div>
     </MainContainer>
   );

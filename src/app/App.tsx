@@ -4,6 +4,7 @@ import { ErrorBoundary } from '../shared';
 import AppRoutes from '../routes/AppRoutes';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 interface AppProps {
   props?: string;
