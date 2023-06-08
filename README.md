@@ -21,4 +21,6 @@
 3. React hook from
 4. Testing library (JEST)
 5. Storybook
-6. RECOMENDED LIBRARIES: https://www.youtube.com/watch?v=6j9tnGMbm2c&ab_channel=Codevolution
+6. Skeleton example
+7. Loader example
+8. RECOMENDED LIBRARIES: https://www.youtube.com/watch?v=6j9tnGMbm2c&ab_channel=Codevolution
