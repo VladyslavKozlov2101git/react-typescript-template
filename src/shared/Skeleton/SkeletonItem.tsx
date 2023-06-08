@@ -12,9 +12,7 @@ const SkeletonItem: FC<SkeletonItemProps> = ({ className = '', number = 1 }) => 
   return (
     <div className={`${styles.root} ${className}`}>
       <SkeletonTheme baseColor="#202020" highlightColor="gray">
-        <p>
-          <Skeleton width={100} count={number} />
-        </p>
+        <Skeleton width={100} count={number} />
       </SkeletonTheme>
     </div>
   );
