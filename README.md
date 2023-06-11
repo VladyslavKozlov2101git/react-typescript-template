@@ -19,8 +19,9 @@
 
 2. Create page with recommendation how to write code clearly
 3. React hook from
-4. Testing library (JEST)
-5. Storybook
-6. Skeleton example
-7. Loader example
-8. RECOMENDED LIBRARIES: https://www.youtube.com/watch?v=6j9tnGMbm2c&ab_channel=Codevolution
+4. Add vite svg configs
+5. Testing library (JEST)
+6. Storybook
+7. Skeleton example
+8. Loader example
+9. RECOMENDED LIBRARIES: https://www.youtube.com/watch?v=6j9tnGMbm2c&ab_channel=Codevolution
