@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "VladislavKozlov <vladyslavkozlov2101@gmail.com> (https://www.linkedin.com/in/vladyslav-kozlov-1a0963115/)",
   "scripts": {
-    "dev": "nvm use 16.15.1 && vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
