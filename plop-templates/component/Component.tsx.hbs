@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import styles from './{{name}}.module.scss';
+import styles from './{{pascalCase name}}.module.scss';
 
-interface {{name}}Props {
+interface {{pascalCase name}}Props {
   className?: string;
 }
 
-const {{name}}: FC<{{name}}Props> = ({className=""}) => {
-  return <div className={`${styles.root} ${className}`}>{{name}}</div>;
+const {{pascalCase name}}: FC<{{pascalCase name}}Props> = ({ className = '' }) => {
+  return <div className={`${styles.root} ${className}`}>{`{{pascalCase name}}`}</div>;
 };
 
-export default {{name}};
+export default {{pascalCase name}};

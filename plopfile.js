@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 // eslint-disable-next-line no-undef
 module.exports = function (plop) {
   plop.setGenerator('component', {
@@ -18,26 +21,58 @@ module.exports = function (plop) {
         default: 0,
       },
       {
+        type: 'list',
+        name: 'subfolder',
+        message: 'Subfolder within features directory',
+        choices: function (answers) {
+          const subfolders = [];
+
+          if (fs.existsSync('src/features')) {
+            const featureSubfolders = fs.readdirSync('src/features').filter(function (file) {
+              return fs.statSync(path.join('src/features', file)).isDirectory();
+            });
+            subfolders.push(...featureSubfolders);
+          }
+
+          // Add the option for the current directory
+          if (answers.base === 'features') {
+            subfolders.push('Current Location');
+          }
+
+          return subfolders;
+        },
+        when: function (answers) {
+          return answers.base === 'features';
+        },
+      },
+      {
         type: 'input',
         name: 'name',
         message: 'Component name',
       },
     ],
     actions: function (data) {
+      if (data.subfolder === 'current') {
+        data.subfolder = '';
+      }
+
+      const basePath =
+        data.base === 'features' ? `src/features/${data.subfolder}` : `src/${data.base}`;
+
       return [
         {
           type: 'add',
-          path: `src/${data.base}/{{directory}}/{{pascalCase name}}/{{pascalCase name}}.tsx`,
+          path: `${basePath}/{{directory}}/{{pascalCase name}}/{{pascalCase name}}.tsx`,
           templateFile: `plop-templates/component/Component.tsx.hbs`,
         },
         {
           type: 'add',
-          path: `src/${data.base}/{{directory}}/{{pascalCase name}}/{{pascalCase name}}.module.scss`,
+          path: `${basePath}/{{directory}}/{{pascalCase name}}/{{pascalCase name}}.module.scss`,
           templateFile: 'plop-templates/component/Component.scss.hbs',
         },
         {
           type: 'add',
-          path: `src/${data.base}/{{directory}}/{{pascalCase name}}/index.ts`,
+          path: `${basePath}/{{directory}}/{{pascalCase name}}/index.ts`,
           templateFile: 'plop-templates/component/Component.index.hbs',
         },
       ];
