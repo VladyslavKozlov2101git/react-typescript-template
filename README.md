@@ -5,7 +5,8 @@
 - REDUX TOOLKIT
 - REACT ROUTER DOM
   +fonts
-- scss styles
+
+* scss styles
 
 - AXIOS SETTINGS
 
