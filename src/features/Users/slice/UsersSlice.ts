@@ -1,45 +1,38 @@
-
-import { User } from "../../../models/User.model"
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { fetchUsers } from "./UsersActions";
-
-
+import { User } from '../../../models/User.model';
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchUsers } from './UsersActions';
 
 interface UsersState {
-    users: User[];
-    isLoading: boolean;
-    error: string;
-    count: number;
+  users: User[];
+  isLoading: boolean;
+  error: string;
+  count: number;
 }
 
 const initialState: UsersState = {
-    users: [],
-    isLoading: false,
-    error: "",
-    count: 0
-}
+  users: [],
+  isLoading: false,
+  error: '',
+  count: 0,
+};
 
 export const usersSlice = createSlice({
-    name: "user",
-    initialState,
-    reducers: {
+  name: 'SIGN_IN',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUsers.fulfilled, (state) => {
+        state.isLoading = false;
+        state.error = '';
+      })
+      .addCase(fetchUsers.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchUsers.rejected, (state) => {
+        state.isLoading = false;
+      });
+  },
+});
 
-    },
-    extraReducers: {
-        [fetchUsers.fulfilled.type]: (state, action: PayloadAction<User[]>) => {
-            state.isLoading = false,
-                state.error = "",
-                state.users = action.payload
-        },
-        [fetchUsers.pending.type]: (state) => {
-            state.isLoading = true
-
-        },
-        [fetchUsers.rejected.type]: (state, action: PayloadAction<string>) => {
-            state.isLoading = false,
-                state.error = action.payload
-        }
-    }
-})
-
-export default usersSlice.reducer
+export default usersSlice.reducer;
