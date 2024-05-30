@@ -1,11 +1,12 @@
 import { FC } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate, Outlet } from 'react-router-dom';
 import Dashboard from '../features/Dashboard';
 import { authPath, mainPath } from './paths';
 import PageNotFound from '../shared/PageNotFound';
 import Users from '../features/Users';
 import Examples from '../features/Examples';
 import Recomendations from '../features/Recomendations';
+import MainContainer from '../containers/MainContainer';
 
 interface MainRoutes {
   props?: string;
@@ -27,11 +28,14 @@ const MainRoutes: FC<MainRoutes> = () => {
       />
 
       <Route path={authPath.signIn.path} element={<Dashboard />} />
-      <Route path={mainPath.dashboard.path} element={<Dashboard />} />
-      <Route path={mainPath.examples.path} element={<Examples />} />
-      <Route path={mainPath.recomendations.path} element={<Recomendations />} />
-      <Route path={mainPath.invoices.path}></Route>
-      <Route path={mainPath.users.path} element={<Users />} />
+
+      <Route element={<MainContainer children={<Outlet />} />}>
+        <Route path={mainPath.dashboard.path} element={<Dashboard />} />
+        <Route path={mainPath.examples.path} element={<Examples />} />
+        <Route path={mainPath.recomendations.path} element={<Recomendations />} />
+        <Route path={mainPath.invoices.path}></Route>
+        <Route path={mainPath.users.path} element={<Users />} />
+      </Route>
 
       <Route path={'/404'} element={<PageNotFound />} />
       <Route path="*" element={<Navigate replace to="/404" />} />
