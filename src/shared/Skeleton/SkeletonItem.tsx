@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import styles from './SkeletonItem.module.scss';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+
+import styles from './SkeletonItem.module.scss';
 
 interface SkeletonItemProps {
   className?: string;
