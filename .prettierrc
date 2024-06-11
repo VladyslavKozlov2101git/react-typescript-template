@@ -7,5 +7,9 @@
   "jsxSingleQuote": false,
   "printWidth": 100,
   "tabWidth": 2,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": ["^components/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

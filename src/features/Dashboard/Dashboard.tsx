@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import styles from './Dashboard.module.scss';
+
 import MainContainer from '../../containers/MainContainer';
+import styles from './Dashboard.module.scss';
 
 interface DashboardProps {
   className?: string;

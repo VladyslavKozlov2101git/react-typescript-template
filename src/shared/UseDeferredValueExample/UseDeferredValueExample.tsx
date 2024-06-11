@@ -1,4 +1,5 @@
-import React, { FC, useDeferredValue, memo, useState } from 'react';
+import { FC, memo, useDeferredValue, useState } from 'react';
+
 import styles from './UseDeferredValueExample.module.scss';
 
 interface SlowListProps {

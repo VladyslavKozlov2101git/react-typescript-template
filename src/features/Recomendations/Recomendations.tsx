@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import styles from './Recomendations.module.scss';
+
 import MainContainer from '../../containers/MainContainer';
+import styles from './Recomendations.module.scss';
 
 interface RecomendationsProps {
   className?: string;

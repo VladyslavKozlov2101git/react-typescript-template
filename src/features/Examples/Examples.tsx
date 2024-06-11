@@ -1,12 +1,13 @@
 import { FC } from 'react';
-import styles from './Examples.module.scss';
+
 import MainContainer from '../../containers/MainContainer';
 import {
-  UseOnClickOutsideExample,
+  Skeleton,
   UseDebounceExample,
   UseDeferredValueExample,
-  Skeleton,
+  UseOnClickOutsideExample,
 } from '../../shared/index';
+import styles from './Examples.module.scss';
 
 interface ExamplesProps {
   className?: string;

@@ -1,4 +1,4 @@
-import { useEffect, RefObject, useState, useCallback } from 'react';
+import { RefObject, useCallback, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 export function useOnClickOutside<T extends HTMLElement>(
