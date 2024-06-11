@@ -10,7 +10,7 @@ interface AppProps {
   props?: string;
 }
 
-const App: FC<AppProps> = (props) => {
+const App: FC<AppProps> = () => {
   return (
     <ErrorBoundary>
       <Provider store={store}>

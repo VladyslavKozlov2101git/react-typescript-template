@@ -33,7 +33,7 @@ interface UseDeferredValueExampleProps {
   className?: string;
 }
 
-const UseDeferredValueExample: FC<UseDeferredValueExampleProps> = ({ className = '' }) => {
+const UseDeferredValueExample: FC<UseDeferredValueExampleProps> = () => {
   const [text, setText] = useState('');
   const deferredText = useDeferredValue(text);
   return (

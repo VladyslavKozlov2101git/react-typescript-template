@@ -7,6 +7,7 @@
     "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix",
     "preview": "vite preview",
     "test": "jest",
     "plop": "plop"
@@ -15,6 +16,7 @@
     "@reduxjs/toolkit": "^2.2.5",
     "@testing-library/react": "^16.0.0",
     "axios": "^1.7.2",
+    "eslint-plugin-unused-imports": "^3.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
