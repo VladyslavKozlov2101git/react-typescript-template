@@ -1,13 +1,14 @@
-import { FC } from 'react';
-import { Route, Routes, Navigate, Outlet } from 'react-router-dom';
-import Dashboard from '../features/Dashboard';
-import { authPath, mainPath } from './paths';
-import PageNotFound from '../shared/PageNotFound';
-import Users from '../features/Users';
-import Examples from '../features/Examples';
-import Recomendations from '../features/Recomendations';
-import MainContainer from '../containers/MainContainer';
+import { FC, lazy } from 'react';
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 
+import MainContainer from '../containers/MainContainer';
+import Examples from '../features/Examples';
+import { authPath, mainPath } from './paths';
+
+const Dashboard = lazy(() => import('../features/Dashboard'));
+const PageNotFound = lazy(() => import('../shared/PageNotFound'));
+const Recomendations = lazy(() => import('../features/Recomendations'));
+const Users = lazy(() => import('../features/Users'));
 interface MainRoutes {
   props?: string;
 }
