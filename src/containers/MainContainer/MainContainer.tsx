@@ -1,9 +1,10 @@
+import Footer from '@layouts/Footer';
+import Header from '@layouts/Header';
 import { FC, ReactNode, useEffect } from 'react';
-import styles from './MainContainer.module.scss';
 import { useNavigate } from 'react-router';
+
 import { authPath } from '../../routes/paths';
-import Header from '../../layouts/Header';
-import Footer from '../../layouts/Footer';
+import styles from './MainContainer.module.scss';
 
 interface MainContainerProps {
   className?: string;

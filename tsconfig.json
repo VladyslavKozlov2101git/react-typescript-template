@@ -1,6 +1,18 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "baseUrl": "./src",
+    "paths": {
+      "@features/*": ["features/*"],
+      "@layouts/*": ["layouts/*"],
+      "@redux/*": ["redux/*"],
+      "@models/*": ["models/*"],
+      "@shared/*": ["shared/*"],
+      "@assets/*": ["assets/*"],
+      "@helpers/*": ["helpers/*"],
+      "@containers/*": ["containers/*"],
+    },
+
     "lib": [
       "DOM",
       "DOM.Iterable",

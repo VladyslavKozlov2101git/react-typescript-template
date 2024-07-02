@@ -1,9 +1,10 @@
-import { User } from '../../../models/User.model';
 import { createSlice } from '@reduxjs/toolkit';
+
+import { USER } from '../../../models/User.model';
 import { fetchUsers } from './UsersActions';
 
 interface UsersState {
-  users: User[];
+  users: USER[];
   isLoading: boolean;
   error: string;
   count: number;

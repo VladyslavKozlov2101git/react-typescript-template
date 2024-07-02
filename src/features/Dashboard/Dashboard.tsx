@@ -1,6 +1,6 @@
+import MainContainer from '@containers/MainContainer';
 import { FC } from 'react';
 
-import MainContainer from '../../containers/MainContainer';
 import styles from './Dashboard.module.scss';
 
 interface DashboardProps {
