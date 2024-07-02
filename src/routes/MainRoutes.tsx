@@ -1,9 +1,11 @@
-import Examples from '@features/Examples';
 import { FC, lazy } from 'react';
+
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 
 import MainContainer from '../containers/MainContainer';
 import { authPath, mainPath } from './paths';
+import Examples from '@features/Examples';
+
 
 const Dashboard = lazy(() => import('@features/Dashboard'));
 

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import MainContainer from '../../containers/MainContainer';
+import MainContainer from '@containers/MainContainer';
 import {
   Skeleton,
   UseDebounceExample,
