@@ -1,14 +1,13 @@
 {
-  "plugins": [
-    "@trivago/prettier-plugin-sort-imports"   
-  ],
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrder": [
     "react",
+    "clsx",
     "<THIRD_PARTY_MODULES>",
     "^./(.*)$",
     "^../(.*)$",
-    "@features/",
     "@containers/",
+    "@pages/",
     "@components/",
     "@redux/",
     "@assets/",

@@ -1,24 +1,23 @@
 import { FC, lazy } from 'react';
-
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 
-import MainContainer from '../containers/MainContainer';
 import { authPath, mainPath } from './paths';
-import Examples from '@features/Examples';
 
+import MainContainer from '../containers/MainContainer';
 
-const Dashboard = lazy(() => import('@features/Dashboard'));
+import Examples from '@pages/Examples';
+
+const Dashboard = lazy(() => import('@pages/Dashboard'));
 
 const PageNotFound = lazy(() => import('@shared/PageNotFound'));
-const Recomendations = lazy(() => import('@features/Recomendations'));
-const Users = lazy(() => import('@features/Users'));
+const Recomendations = lazy(() => import('@pages/Recomendations'));
+const Users = lazy(() => import('@pages/Users'));
 
 interface MainRoutes {
   props?: string;
 }
 
 const MainRoutes: FC<MainRoutes> = () => {
-
   const token = localStorage.getItem('token');
   return (
     <Routes>

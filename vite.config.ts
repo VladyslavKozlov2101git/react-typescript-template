@@ -1,4 +1,5 @@
 import react from '@vitejs/plugin-react';
+
 import { defineConfig } from 'vite';
 
 export default () => {
@@ -15,7 +16,7 @@ export default () => {
         '@assets': '/src/assets',
         '@helpers': '/src/helpers',
         '@layouts': '/src/layouts',
-        '@features': '/src/features',
+        '@pages': '/src/features',
         '@containers': '/src/containers',
       },
     },

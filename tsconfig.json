@@ -3,7 +3,7 @@
     "target": "ESNext",
     "baseUrl": "./src",
     "paths": {
-      "@features/*": ["features/*"],
+      "@pages/*": ["pages/*"],
       "@layouts/*": ["layouts/*"],
       "@redux/*": ["redux/*"],
       "@models/*": ["models/*"],
