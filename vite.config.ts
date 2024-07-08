@@ -16,7 +16,7 @@ export default () => {
         '@assets': '/src/assets',
         '@helpers': '/src/helpers',
         '@layouts': '/src/layouts',
-        '@pages': '/src/features',
+        '@pages': '/src/pages',
         '@containers': '/src/containers',
       },
     },

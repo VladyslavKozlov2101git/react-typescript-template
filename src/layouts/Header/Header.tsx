@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import styles from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
+
+import styles from './Header.module.scss';
+
 import { mainPath } from '../../routes/paths';
 
 interface HeaderProps {

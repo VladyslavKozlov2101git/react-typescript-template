@@ -1,6 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import usersReducer from '../features/Users/slice/UsersSlice';
+
 import { cachedAPI } from './cachedAPI';
+
+import usersReducer from '../pages/Users/slice/UsersSlice';
 
 export const rootReducer = combineReducers({
   usersReducer,
