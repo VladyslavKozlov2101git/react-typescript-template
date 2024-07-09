@@ -1,4 +1,4 @@
-import { FC, ReactNode, Suspense } from 'react';
+import { FC, Fragment, ReactNode, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import clsx from 'clsx';
@@ -15,13 +15,15 @@ interface MainContainerProps {
 
 const MainContainer: FC<MainContainerProps> = ({ className = '' }) => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Fragment>
       <Header />
       <main className={clsx(styles.root, className, 'container')}>
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
-    </Suspense>
+    </Fragment>
   );
 };
 
