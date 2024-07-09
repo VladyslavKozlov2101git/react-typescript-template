@@ -1,6 +1,5 @@
 import { FC } from 'react';
 
-import MainContainer from '../../containers/MainContainer';
 import styles from './Recomendations.module.scss';
 
 interface RecomendationsProps {
@@ -8,11 +7,7 @@ interface RecomendationsProps {
 }
 
 const Recomendations: FC<RecomendationsProps> = ({ className = '' }) => {
-  return (
-    <MainContainer>
-      <div className={`${styles.root} ${className}`}>Recomendations</div>
-    </MainContainer>
-  );
+  return <div className={`${styles.root} ${className}`}>Recomendations</div>;
 };
 
 export default Recomendations;

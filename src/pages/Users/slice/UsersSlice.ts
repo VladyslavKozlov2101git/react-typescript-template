@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { USER } from '../../../models/User.model';
 import { fetchUsers } from './UsersActions';
+
+import { USER } from '../../../models/User.model';
 
 interface UsersState {
   users: USER[];
@@ -23,8 +24,9 @@ export const usersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchUsers.fulfilled, (state) => {
+      .addCase(fetchUsers.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.users = action.payload;
         state.error = '';
       })
       .addCase(fetchUsers.pending, (state) => {

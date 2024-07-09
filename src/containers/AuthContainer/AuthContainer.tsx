@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import clsx from 'clsx';
 
@@ -14,7 +15,7 @@ const AuthContainer: FC<AuthContainerProps> = ({ className = '', children }) => 
     <>
       <main className={clsx(styles.container, className)}>
         <aside className={styles.header}>Header</aside>
-        {children}
+        <Outlet />
       </main>
       <footer className={styles.footer}>Footer</footer>
     </>
