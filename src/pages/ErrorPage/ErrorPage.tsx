@@ -9,7 +9,6 @@ interface ErrorPageProps {
   className?: string;
 }
 
-// Define the error response type
 interface ErrorResponse {
   status: number;
   statusText?: string;
@@ -31,7 +30,6 @@ const ErrorPage: FC<ErrorPageProps> = ({ className = '' }) => {
     );
   }
 
-  // Default fallback UI for other errors
   return <div className={clsx(styles.root, className)}>Something went wrong. </div>;
 };
 
