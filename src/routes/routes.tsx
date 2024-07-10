@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { lazy } from 'react';
-import { Outlet, createBrowserRouter } from 'react-router-dom';
+import { Outlet, createBrowserRouter, redirect } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
 import { authPath, mainPath } from './paths';
@@ -29,9 +29,13 @@ export const router = createBrowserRouter([
   {
     path: '/',
     errorElement: <ErrorPage />,
-    action: handleRedirect,
+    loader: handleRedirect,
     element: <Outlet />,
     children: [
+      {
+        index: true,
+        loader: async () => redirect(mainPath.dashboard.path),
+      },
       {
         path: '/auth',
         element: <AuthContainer />,
