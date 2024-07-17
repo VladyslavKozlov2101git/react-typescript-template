@@ -10,14 +10,14 @@ module.exports = function (plop) {
         type: 'list',
         name: 'component',
         message: 'Component type',
-        choices: ['Function', 'Redux'],
+        choices: ['Function', 'Page'],
         default: 0,
       },
       {
         type: 'list',
         name: 'base',
         message: 'Base directory',
-        choices: ['features', 'shared'],
+        choices: ['pages', 'shared', 'component'],
         default: 0,
       },
       {
