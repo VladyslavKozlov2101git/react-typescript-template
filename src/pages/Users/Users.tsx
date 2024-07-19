@@ -1,9 +1,10 @@
 import { FC, useEffect } from 'react';
 
 import styles from './Users.module.scss';
-import { fetchUsers } from './slice/UsersActions';
 
 import { useAppDispatch, useAppSelector } from '../../app/reduxHooks';
+
+import { fetchUsers } from '@redux/UsersSlice/UsersActions';
 
 interface UsersProps {
   className?: string;
