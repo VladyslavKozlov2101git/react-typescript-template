@@ -2,7 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import { cachedAPI } from './cachedAPI';
 
-import usersReducer from '../pages/Users/slice/UsersSlice';
+import usersReducer from '@redux/UsersSlice/UsersSlice';
 
 export const rootReducer = combineReducers({
   usersReducer,
