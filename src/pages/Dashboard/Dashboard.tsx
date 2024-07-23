@@ -7,7 +7,11 @@ interface DashboardProps {
 }
 
 const Dashboard: FC<DashboardProps> = ({ className = '' }) => {
-  return <div className={`${styles.root} ${className}`}>Dashboard</div>;
+  return (
+    <div className={`${styles.root} ${className}`} data-testid="dashboard">
+      Dashboard
+    </div>
+  );
 };
 
 export default Dashboard;

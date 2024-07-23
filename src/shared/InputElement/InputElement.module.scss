@@ -4,6 +4,7 @@
   justify-content: flex-start;
   gap: 8px;
   width: 100%;
+  position: relative;
 
   input[type='password'] {
     padding: 14px 45px 14px 16px;
@@ -21,8 +22,8 @@
     height: 54px;
     padding: 14px 16px;
     border-radius: 8px;
-    border: 1px solid rgb(0, 0, 0);
-    background: var(--Background-Surface, rgba(255, 255, 255, 0.08));
+    border: 1px solid var(--Border-2, rgba(10, 31, 27, 0.08));
+    background: #fff;
     transition-duration: 0.2s;
     @media (max-width: 1200px) {
       padding: 10px 16px;
@@ -48,12 +49,12 @@
 
     &:hover {
       transition: all 0.3s ease;
-      border: 1px solid var(--Border-1, rgba(0, 0, 0, 0.7));
+      border: 1px solid var(--Border-2, rgba(10, 31, 27, 0.08));
     }
 
     &:focus {
       transition: all 0.3s ease;
-      border: 1px solid var(--Border-1, rgba(255, 255, 255, 0.08));
+      border: 1px solid var(--Border-2, rgba(10, 31, 27, 0.08));
       background: var(--Background-Surface, rgba(255, 255, 255, 0.08));
     }
   }
@@ -128,20 +129,21 @@
   }
 
   .error__text {
+    position: absolute;
     color: var(--Border-Bad, #ed553e);
-    font-family: 'Spline Sans', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
+    bottom: -18px;
   }
 }
 .label {
-  color: var(--Content-Secondary, #b8b8b8);
+  color: var(--Content-Tertiary, #6d7280);
   font-size: 12px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 16px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   margin-right: auto;
 }

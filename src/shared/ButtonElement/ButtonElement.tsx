@@ -45,6 +45,7 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
     <>
       {to ? (
         <Link
+          data-testid="button-element"
           to={to}
           target={target}
           className={buttonClasses}
@@ -56,6 +57,7 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
         </Link>
       ) : (
         <button
+          data-testid="button-element"
           className={buttonClasses}
           type={type ? type : 'button'}
           onClick={onClick}

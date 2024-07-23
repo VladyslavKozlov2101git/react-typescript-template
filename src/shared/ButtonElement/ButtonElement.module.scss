@@ -12,12 +12,12 @@
   min-width: 120px;
   width: 100%;
   padding: 14px 24px;
-  height: 48px;
+  height: 56px;
   gap: 8px;
 
   &.primary {
-    background: var(--Brand-1, #00e1ad);
-    color: var(--Content-Primary-on-light, #111);
+    background: var(--Brand, #248071);
+    color: var(--White, #fff);
   }
 
   &.link {
@@ -33,8 +33,14 @@
 
   &.outline {
     background: transparent;
-    color: var(--Content-Primary, #fafafa);
-    border: 1px solid var(--Background-Surface, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    border: 1px solid var(--Border-2, rgba(10, 31, 27, 0.08));
+    color: var(--Content-Primary, #0a1f1b);
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
   }
 
   &.small {
@@ -47,7 +53,7 @@
     gap: 6px;
   }
   &.medium {
-    max-width: 160px;
+    max-width: 164px;
     width: 100%;
   }
   &.large {
