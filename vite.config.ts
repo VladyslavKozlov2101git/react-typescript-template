@@ -14,6 +14,8 @@ export default () => {
     resolve: {
       alias: {
         '@': '/src',
+        '@app': '/src/app',
+        '@components': '/src/components',
         '@redux': '/src/redux',
         '@models': '/src/models',
         '@shared': '/src/shared',

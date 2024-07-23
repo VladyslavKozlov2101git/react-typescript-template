@@ -3,6 +3,8 @@
     "target": "ESNext",
     "baseUrl": "./src",
     "paths": {
+      "@app/*": ["app/*"],
+      "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@layouts/*": ["layouts/*"],
       "@redux/*": ["redux/*"],

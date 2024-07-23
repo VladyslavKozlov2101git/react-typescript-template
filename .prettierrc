@@ -7,14 +7,14 @@
     "^./(.*)$",
     "^../(.*)$",
     "@containers/",
+    "@app/",
     "@pages/",
     "@components/",
     "@redux/",
     "@assets/",
     "@models/",
     "@helpers/",
-    "@shared/",
-    "@assets/"
+    "@shared/"
   ],
   "semi": true,
   "singleQuote": true,
