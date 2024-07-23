@@ -8,7 +8,6 @@ import styles from './ButtonElement.module.scss';
 interface ButtonElementProps {
   className?: string;
   text: string;
-  error?: boolean;
   onClick?: () => void;
   to?: string;
   isLoading?: boolean;
@@ -26,7 +25,6 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
   text = 'text',
   isLoading = false,
   dataTooltipId,
-  error,
   onClick,
   to,
   target,
@@ -37,7 +35,6 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
   disabled = false,
 }) => {
   const buttonClasses = clsx(styles.root, styles[view], className, {
-    [styles.error]: error,
     [styles[size]]: size,
   });
 
@@ -65,7 +62,7 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
           disabled={disabled}
         >
           {isLoading ? (
-            <span className={styles.loader}></span>
+            <span data-testid="button-element-loader" className={styles.loader}></span>
           ) : (
             <>
               {icon && icon}
