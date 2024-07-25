@@ -34,15 +34,13 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
   view = 'primary',
   disabled = false,
 }) => {
-  const buttonClasses = clsx(styles.root, styles[view], className, {
-    [styles[size]]: size,
-  });
+  const buttonClasses = clsx(styles.root, styles[view], className, size);
 
   return (
     <>
       {to ? (
         <Link
-          data-testid="button-element"
+          data-testid="link-element"
           to={to}
           target={target}
           className={buttonClasses}

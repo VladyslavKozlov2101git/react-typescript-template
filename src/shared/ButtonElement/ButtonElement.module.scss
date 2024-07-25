@@ -43,7 +43,7 @@
     line-height: 22px;
   }
 
-  &.small {
+  &:global(.small) {
     padding: 6px 8px;
     height: 40px;
     min-width: 116px;
@@ -52,11 +52,11 @@
     width: fit-content;
     gap: 6px;
   }
-  &.medium {
+  &:global(.medium) {
     max-width: 164px;
     width: 100%;
   }
-  &.large {
+  &:global(.large) {
     width: 100%;
   }
 

@@ -32,17 +32,8 @@ describe('ButtonElement', () => {
 
   it('should apply size class correctly', () => {
     const button = render(<ButtonElement text="Size Medium" size="medium" />);
-
-    //console.log('Container children:', button.);
+    expect(button.getByTestId('button-element')).toHaveClass('medium');
   });
-
-  // it('should render a link element when "to" prop is provided', () => {
-  //   render(<ButtonElement text="Test Link" to="/test" />);
-  //   const linkElement = screen.getByTestId('button-element');
-  //   expect(linkElement).toBeInTheDocument();
-  //   expect(linkElement.tagName).toBe('A');
-  //   expect(linkElement).toHaveAttribute('href', '/test');
-  // });
 
   // it('should render with icon if provided', () => {
   //   const Icon = () => <span>Icon</span>;
