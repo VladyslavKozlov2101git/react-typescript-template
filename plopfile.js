@@ -8,7 +8,7 @@ module.exports = function (plop) {
     prompts: [
       {
         type: 'list',
-        name: 'component',
+        name: 'components',
         message: 'Component type',
         choices: ['Function', 'Page'],
         default: 0,
@@ -17,7 +17,7 @@ module.exports = function (plop) {
         type: 'list',
         name: 'base',
         message: 'Base directory',
-        choices: ['pages', 'shared', 'component'],
+        choices: ['pages', 'shared', 'components'],
         default: 0,
       },
       {

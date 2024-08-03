@@ -202,6 +202,14 @@ select {
   font: inherit;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: all 5000s ease-in-out 0s !important;
+  transition-property: background-color, color !important;
+}
+
 a,
 button {
   text-decoration: none;
@@ -210,7 +218,7 @@ button {
   transition: {
     duration: 0.3s;
     property: color, background, background-color, border-color;
-  };
+  }
 }
 
 input[type='number']::-webkit-outer-spin-button,
