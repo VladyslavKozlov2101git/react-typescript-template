@@ -14,7 +14,8 @@
     "@assets/",
     "@models/",
     "@helpers/",
-    "@shared/"
+    "@shared/",
+    "@routes/"
   ],
   "semi": true,
   "singleQuote": true,

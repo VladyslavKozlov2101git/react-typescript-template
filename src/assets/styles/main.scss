@@ -206,9 +206,16 @@ h3,
   }
 }
 
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear {
+  display: none;
+}
+
 .card-hover {
   cursor: pointer;
-  transition: margin-top var(--transition-duration), margin-bottom var(--transition-duration);
+  transition:
+    margin-top var(--transition-duration),
+    margin-bottom var(--transition-duration);
 
   @media (hover) {
     &:hover,

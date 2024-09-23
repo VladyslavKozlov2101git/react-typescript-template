@@ -11,6 +11,13 @@ export default () => {
       environment: 'jsdom',
       setupFiles: './src/tests/setup',
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          silenceDeprecations: ['legacy-js-api'],
+        },
+      },
+    },
     resolve: {
       alias: {
         '@': '/src',
@@ -20,6 +27,7 @@ export default () => {
         '@models': '/src/models',
         '@shared': '/src/shared',
         '@assets': '/src/assets',
+        '@routes': '/src/routes/paths',
         '@helpers': '/src/helpers',
         '@layouts': '/src/layouts',
         '@pages': '/src/pages',

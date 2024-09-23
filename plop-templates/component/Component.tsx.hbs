@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import clsx from 'clsx';
 import styles from './{{pascalCase name}}.module.scss';
 
 interface {{pascalCase name}}Props {
@@ -6,7 +7,7 @@ interface {{pascalCase name}}Props {
 }
 
 const {{pascalCase name}}: FC<{{pascalCase name}}Props> = ({ className = '' }) => {
-  return <div className={`${styles.root} ${className}`}>{`{{pascalCase name}}`}</div>;
+   return <div className={clsx(styles.root, className)}>{`{{pascalCase name}}`}</div>;
 };
 
 export default {{pascalCase name}};
