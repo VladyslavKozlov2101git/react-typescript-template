@@ -10,6 +10,8 @@ import styles from './MainContainer.module.scss';
 
 import { authPath } from '../../routes/paths';
 
+import LoaderComponent from '@shared/LoaderComponent';
+
 interface MainContainerProps {
   className?: string;
   children?: ReactNode;
@@ -29,7 +31,7 @@ const MainContainer: FC<MainContainerProps> = ({ className = '' }) => {
     <Fragment>
       <Header />
       <main className={clsx(styles.root, className, 'container')}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoaderComponent />}>
           <Outlet />
         </Suspense>
       </main>

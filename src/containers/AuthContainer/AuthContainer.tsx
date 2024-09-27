@@ -7,6 +7,8 @@ import styles from './AuthContainer.module.scss';
 
 import { mainPath } from '../../routes/paths';
 
+import LoaderComponent from '@shared/LoaderComponent';
+
 interface AuthContainerProps {
   className?: string;
   children?: ReactNode;
@@ -25,7 +27,7 @@ const AuthContainer: FC<AuthContainerProps> = ({ className = '' }) => {
     <Fragment>
       <footer className={styles.header}>Header</footer>
       <main className={clsx(styles.root, className, 'container')}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoaderComponent />}>
           <Outlet />
         </Suspense>
       </main>
