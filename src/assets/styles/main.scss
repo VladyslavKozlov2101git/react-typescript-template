@@ -1,7 +1,6 @@
-@import 'reset';
-@import 'vars';
-@import 'helpers';
-@import 'mixins';
+@use 'reset' as *;
+@use 'vars' as *;
+@use 'mixins' as *;
 
 body {
   font-family: var(--font);
@@ -189,10 +188,6 @@ h3,
 
 .lowercase {
   text-transform: lowercase;
-}
-
-.truncate-two-lines {
-  @include truncateLineClamp();
 }
 
 .good-hover {
