@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// eslint-disable-next-line no-undef
+ 
 module.exports = function (plop) {
   plop.setGenerator('component', {
     description: 'React component using Typescript',
