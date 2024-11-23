@@ -1,4 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
+ 
 import { Outlet, createBrowserRouter, redirect } from 'react-router-dom';
 
 import { authPath, mainPath } from './paths';

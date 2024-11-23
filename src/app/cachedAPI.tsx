@@ -1,30 +1,41 @@
 import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
+
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+
 import { WORKER } from '../models/Workers.model';
 
 const baseURL = `${import.meta.env.VITE_REACT_APP_API_URL}`;
 
 const axiosBaseQuery =
-  (): BaseQueryFn<
+  <TData = unknown,>(): BaseQueryFn<
     {
       baseUrl: string;
       url: string;
       method: AxiosRequestConfig['method'];
-      data?: AxiosRequestConfig['data'];
+      data?: TData;
       headers?: AxiosRequestConfig['headers'];
     },
     unknown,
-    unknown
+    { status: number; data: unknown }
   > =>
   async ({ baseUrl, url, method, data, headers }) => {
     try {
-      const result = await axios({ url: baseUrl + url, method, data, headers });
+      const result = await axios({
+        url: baseUrl + url,
+        method,
+        data,
+        headers,
+      });
       return { data: result.data };
     } catch (axiosError) {
-      // Error handler
       const err = axiosError as AxiosError;
 
-      return { error: { status: err.response?.status, data: err.response?.data } };
+      return {
+        error: {
+          status: err.response?.status || 500,
+          data: err.response?.data || err.message,
+        },
+      };
     }
   };
 

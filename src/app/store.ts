@@ -1,8 +1,11 @@
-import { configureStore, Middleware } from '@reduxjs/toolkit';
-import { rootReducer } from './rootReducer';
-import axios from 'axios';
-import { cachedAPI } from './cachedAPI';
 import toast from 'react-hot-toast';
+
+import { Middleware, configureStore } from '@reduxjs/toolkit';
+import axios, { AxiosError } from 'axios';
+
+import { cachedAPI } from './cachedAPI';
+import { rootReducer } from './rootReducer';
+
 import { authPath } from '../routes/paths';
 
 const authMiddleware: Middleware = () => (next) => (action) => {
@@ -19,17 +22,20 @@ axios.interceptors.response.use(
   function (response) {
     return response;
   },
-  function (error) {
-    const { status } = error.response;
-    if (status === 401) {
-      localStorage.clear();
-      sessionStorage.clear();
-      if (window.location.pathname !== authPath.signIn.path) {
-        window.location.replace(authPath.signIn.path);
+  function (error: AxiosError) {
+    if (error.response) {
+      const { status } = error.response;
+
+      if (status === 401) {
+        localStorage.clear();
+        sessionStorage.clear();
+        if (window.location.pathname !== authPath.signIn.path) {
+          window.location.replace(authPath.signIn.path);
+        }
       }
-    }
-    if (status === 500 || status === 404) {
-      toast.error('Oops! Something went wrong. Please try again or contact support!');
+      if (status === 500 || status === 404) {
+        toast.error('Oops! Something went wrong. Please try again or contact support!');
+      }
     }
     return Promise.reject(error);
   },

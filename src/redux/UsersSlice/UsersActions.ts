@@ -7,7 +7,7 @@ export const fetchUsers = createAsyncThunk('user/fetchAll', async (_, thunkAPI) 
   try {
     const response = await axios.get<USER[]>('https://jsonplaceholder.typicode.com/users');
     return response.data;
-  } catch (e) {
-    return thunkAPI.rejectWithValue('Не удалось загрузить пользователей');
+  } catch (e: any) {
+    return thunkAPI.rejectWithValue(e);
   }
 });
