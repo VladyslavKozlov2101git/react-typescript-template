@@ -19,6 +19,8 @@ interface ErrorResponse {
 const ErrorPage: FC<ErrorPageProps> = ({ className = '' }) => {
   const error = useRouteError();
 
+  console.log(error);
+
   if (isRouteErrorResponse(error) && typeof error.data === 'string') {
     const errorResponse = error as ErrorResponse;
     return (
