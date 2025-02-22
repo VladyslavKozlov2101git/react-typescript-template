@@ -1,4 +1,3 @@
- 
 import { Outlet, createBrowserRouter, redirect } from 'react-router-dom';
 
 import { authPath, mainPath } from './paths';

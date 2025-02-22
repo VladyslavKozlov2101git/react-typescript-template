@@ -9,30 +9,33 @@ interface ErrorPageProps {
   className?: string;
 }
 
-interface ErrorResponse {
-  status: number;
-  statusText?: string;
-  internal?: boolean;
-  data: string;
-}
-
 const ErrorPage: FC<ErrorPageProps> = ({ className = '' }) => {
   const error = useRouteError();
-
   console.log(error);
 
   if (isRouteErrorResponse(error) && typeof error.data === 'string') {
-    const errorResponse = error as ErrorResponse;
     return (
       <div className={clsx(styles.root, className)}>
-        <h1>{errorResponse.status}</h1>
-        <h2>{errorResponse.statusText || 'An error occurred'}</h2>
-        <p>{errorResponse.data}</p>
+        <h1>{error.status}</h1>
+        <h2>{error.statusText || 'An error occurred'}</h2>
+        <p>{error.data}</p>
       </div>
     );
   }
 
-  return <div className={clsx(styles.root, className)}>Something went wrong. </div>;
+  // Handle generic errors
+  if (error instanceof Error) {
+    return (
+      <div className={clsx(styles.root, className)}>
+        <h3>Oops! Something went wrong! </h3>
+        <details>
+          <p>{error.message}</p>
+        </details>
+      </div>
+    );
+  }
+
+  return <div className={clsx(styles.root, className)}>Something went wrong.</div>;
 };
 
 export default ErrorPage;
