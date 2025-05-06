@@ -17,15 +17,17 @@ interface AuthContainerProps {
 const AuthContainer: FC<AuthContainerProps> = ({ className = '' }) => {
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
+  console.log(token);
   useEffect(() => {
     if (!token) {
       return;
     }
     navigate(mainPath.dashboard.path);
   }, []);
+
   return (
     <Fragment>
-      <footer className={styles.header}>Header</footer>
+      <header className={styles.header}>Header</header>
       <main className={clsx(styles.root, className, 'container')}>
         <Suspense fallback={<LoaderComponent />}>
           <Outlet />

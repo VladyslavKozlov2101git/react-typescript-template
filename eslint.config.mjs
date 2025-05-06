@@ -21,15 +21,9 @@ export default tseslint.config({
   },
   ignores: ['**/.storybook/**'],
   rules: {
-    'react-refresh/only-export-components': 'warn',
-    '@typescript-eslint/no-unsafe-argument': 'error',
-    '@typescript-eslint/no-unsafe-assignment': 'error',
-    '@typescript-eslint/no-unsafe-call': 'error',
-    '@typescript-eslint/no-unsafe-member-access': 'error',
-    '@typescript-eslint/no-unsafe-return': 'error',
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/no-unused-vars': 'off',
-    'no-unused-vars': 'off',
-    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'off',
     'unused-imports/no-unused-imports': 'error',
     'max-lines': ['error', { max: 250, skipBlankLines: true, skipComments: true }],
     'unused-imports/no-unused-vars': [

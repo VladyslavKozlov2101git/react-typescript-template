@@ -1,5 +1,7 @@
-import { FC, useState, useRef } from 'react';
+import { FC, useRef, useState } from 'react';
+
 import styles from './UseOnClickOutsideExample.module.scss';
+
 import { useOnClickOutside } from '../../helpers/hooks';
 
 interface useOnClickOutsideExampleProps {
@@ -9,7 +11,7 @@ interface useOnClickOutsideExampleProps {
 const useOnClickOutsideExample: FC<useOnClickOutsideExampleProps> = ({ className = '' }) => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
-  useOnClickOutside(ref, () => setModalOpen(false));
+  useOnClickOutside(ref as React.RefObject<HTMLElement>, () => setModalOpen(false));
 
   return (
     <div className={`${styles.root} ${className}`}>
@@ -31,5 +33,4 @@ const useOnClickOutsideExample: FC<useOnClickOutsideExampleProps> = ({ className
     </div>
   );
 };
-
 export default useOnClickOutsideExample;

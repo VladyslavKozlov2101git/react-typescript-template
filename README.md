@@ -19,7 +19,3 @@ Useful lessons
 |                 |                                             |
 | Design Patterns | https://importreact.beehiiv.com/            |
 
-
-TO DO
-Error boundary check if it works fine
-https://youtu.be/OQQAv8t3bfc?si=B3C0CjP1R5mD2XL0
