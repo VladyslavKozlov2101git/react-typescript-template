@@ -7,7 +7,7 @@ interface {{pascalCase name}}Props {
 }
 
 const {{pascalCase name}}: FC<{{pascalCase name}}Props> = ({ className = '' }) => {
-   return <div className={clsx(styles.root, className)}>{`{{pascalCase name}}`}</div>;
+   return <div className={clsx(styles.root, className)} data-testid="{{pascalCase name}}">{`{{pascalCase name}}`}</div>;
 };
 
 export default {{pascalCase name}};
