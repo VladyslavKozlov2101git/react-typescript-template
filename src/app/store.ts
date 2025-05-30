@@ -3,10 +3,11 @@ import toast from 'react-hot-toast';
 import { Middleware, configureStore } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
 
-import { cachedAPI } from './cachedAPI';
 import { rootReducer } from './rootReducer';
 
 import { authPath } from '../routes/paths';
+
+import { cachedAPI } from '@services/cachedAPI';
 
 const authMiddleware: Middleware = () => (next) => (action) => {
   const token = localStorage.getItem('token');

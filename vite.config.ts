@@ -23,6 +23,7 @@ export default () => {
         '@': '/src',
         '@app': '/src/app',
         '@components': '/src/components',
+        '@services': '/src/services',
         '@redux': '/src/redux',
         '@models': '/src/models',
         '@shared': '/src/shared',

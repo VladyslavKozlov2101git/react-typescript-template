@@ -8,6 +8,7 @@
     "^../(.*)$",
     "@containers/",
     "@app/",
+    "@services/",
     "@pages/",
     "@components/",
     "@redux/",

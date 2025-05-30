@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { cachedAPI } from './cachedAPI';
+import { cachedAPI } from '@services/cachedAPI';
 
 import usersReducer from '@redux/UsersSlice/UsersSlice';
 

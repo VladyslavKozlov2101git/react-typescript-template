@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
-import { USER } from '@models/User.model';
+import { USER } from 'types/User.model';
 
 export const fetchUsers = createAsyncThunk('user/fetchAll', async (_, thunkAPI) => {
   try {
