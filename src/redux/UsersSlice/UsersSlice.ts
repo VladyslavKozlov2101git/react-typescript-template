@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { USER } from 'types/User.model';
 
 import { fetchUsers } from './UsersActions';
+
+import { USER } from '@models/User.model';
 
 interface UsersState {
   users: USER[];

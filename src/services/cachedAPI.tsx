@@ -2,7 +2,7 @@ import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
 
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 
-import { WORKER } from '../types/Workers.model';
+import { WORKER } from '@models/Workers.model';
 
 const baseURL = `${import.meta.env.VITE_REACT_APP_API_URL}`;
 
