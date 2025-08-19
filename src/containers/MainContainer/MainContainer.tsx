@@ -5,6 +5,7 @@ import clsx from 'clsx';
 
 import Footer from '@layouts/Footer';
 import Header from '@layouts/Header';
+import Cookies from 'js-cookie';
 
 import styles from './MainContainer.module.scss';
 
@@ -18,7 +19,7 @@ interface MainContainerProps {
 }
 
 const MainContainer: FC<MainContainerProps> = ({ className = '' }) => {
-  const token = localStorage.getItem('token');
+  const token = Cookies.get('token');
   const navigate = useNavigate();
   useEffect(() => {
     if (token) {

@@ -2,6 +2,7 @@ import toast from 'react-hot-toast';
 
 import { Middleware, configureStore } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
+import Cookies from 'js-cookie';
 
 import { rootReducer } from './rootReducer';
 
@@ -10,7 +11,7 @@ import { authPath } from '../routes/paths';
 import { cachedAPI } from '@services/cachedAPI';
 
 const authMiddleware: Middleware = () => (next) => (action) => {
-  const token = localStorage.getItem('token');
+  const token = Cookies.get('token');
   if (token) {
     axios.defaults.headers.common['Authorization'] = `Token ${token}`;
   } else {
@@ -28,6 +29,7 @@ axios.interceptors.response.use(
       const { status } = error.response;
 
       if (status === 401) {
+        Cookies.remove('token');
         localStorage.clear();
         sessionStorage.clear();
         if (window.location.pathname !== authPath.signIn.path) {

@@ -3,6 +3,8 @@ import { Outlet, useNavigate } from 'react-router-dom';
 
 import clsx from 'clsx';
 
+import Cookies from 'js-cookie';
+
 import styles from './AuthContainer.module.scss';
 
 import { mainPath } from '../../routes/paths';
@@ -15,9 +17,9 @@ interface AuthContainerProps {
 }
 
 const AuthContainer: FC<AuthContainerProps> = ({ className = '' }) => {
-  const token = localStorage.getItem('token');
+  const token = Cookies.get('token');
   const navigate = useNavigate();
-  console.log(token);
+
   useEffect(() => {
     if (!token) {
       return;

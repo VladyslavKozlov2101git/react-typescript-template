@@ -1,5 +1,7 @@
 import { Outlet, createBrowserRouter, redirect } from 'react-router-dom';
 
+import Cookies from 'js-cookie';
+
 import { authPath, mainPath } from './paths';
 
 import AuthContainer from '@containers/AuthContainer';
@@ -7,7 +9,7 @@ import MainContainer from '@containers/MainContainer';
 
 import ErrorPage from '@pages/ErrorPage';
 
-const token = localStorage.getItem('token');
+const token = Cookies.get('token');
 
 export const router = createBrowserRouter([
   {
