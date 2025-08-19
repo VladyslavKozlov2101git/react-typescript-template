@@ -19,7 +19,6 @@ export default tseslint.config({
       tsconfigRootDir: import.meta.dirname,
     },
   },
-  ignores: ['**/.storybook/**'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/no-unused-vars': 'off',
