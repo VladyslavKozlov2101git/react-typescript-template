@@ -1,4 +1,7 @@
 @use '@/assets/styles/mixins' as *;
 .root {
-  display: flex;
+  :global(.skeleton-container) {
+    display: block;
+    line-height: 1;
+  }
 }
