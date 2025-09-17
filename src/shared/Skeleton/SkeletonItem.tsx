@@ -7,13 +7,28 @@ import styles from './SkeletonItem.module.scss';
 interface SkeletonItemProps {
   className?: string;
   number?: number;
+  width?: string | number;
+  height?: string | number;
+  borderRadius?: string | number;
 }
 
-const SkeletonItem: FC<SkeletonItemProps> = ({ className = '', number = 1 }) => {
+const SkeletonItem: FC<SkeletonItemProps> = ({
+  className = '',
+  number = 1,
+  width = 100,
+  height,
+  borderRadius = 16,
+}) => {
   return (
     <div className={`${styles.root} ${className}`}>
-      <SkeletonTheme baseColor="#202020" highlightColor="gray">
-        <Skeleton width={100} count={number} />
+      <SkeletonTheme baseColor="rgba(0, 0, 0, 0.04)" highlightColor="rgba(0, 0, 0, 0.08)">
+        <Skeleton
+          width={width}
+          height={height}
+          borderRadius={borderRadius}
+          count={number}
+          inline={false}
+        />
       </SkeletonTheme>
     </div>
   );
