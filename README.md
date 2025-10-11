@@ -1,6 +1,6 @@
 | Type         | Description |
 | ------------ | ----------- |
-| Node version | 1. 22.11.0   |
+| Node version | 1. 22.20.0   |
 |              |             |
 | Design link  |             |
 | SWAGGER      |             |
