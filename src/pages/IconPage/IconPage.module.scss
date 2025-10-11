@@ -1,0 +1,39 @@
+@use '@/assets/styles/mixins' as *;
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .iconGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+  }
+
+  .iconCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

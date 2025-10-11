@@ -2,9 +2,17 @@ import { Outlet, createBrowserRouter, redirect } from 'react-router-dom';
 
 import Cookies from 'js-cookie';
 
-import { authPath, mainPath } from './paths';
+import {
+  authPath,
+  developerPath,
+  mainPath,
+  rootAuthPath,
+  rootDevPath,
+  rootMainPath,
+} from './paths';
 
 import AuthContainer from '@containers/AuthContainer';
+import DeveloperContainer from '@containers/DeveloperContainer';
 import MainContainer from '@containers/MainContainer';
 
 import ErrorPage from '@pages/ErrorPage';
@@ -22,7 +30,7 @@ export const router = createBrowserRouter([
         loader: async () => redirect(token ? mainPath.dashboard.path : authPath.signIn.path),
       },
       {
-        path: '/auth',
+        path: rootAuthPath,
         element: <AuthContainer />,
         caseSensitive: true,
         children: [
@@ -43,7 +51,23 @@ export const router = createBrowserRouter([
         ],
       },
       {
-        path: '/main',
+        path: rootDevPath,
+        element: <DeveloperContainer />,
+        caseSensitive: true,
+        children: [
+          {
+            index: true,
+            loader: async () => redirect(developerPath.examples.path),
+          },
+          ...Object.values(developerPath).map((path) => ({
+            path: path.path,
+            element: <path.component />,
+            caseSensitive: true,
+          })),
+        ],
+      },
+      {
+        path: rootMainPath,
         element: <MainContainer />,
         caseSensitive: true,
         children: [
