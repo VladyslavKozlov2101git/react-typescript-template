@@ -4,7 +4,13 @@ import { defineConfig } from 'vitest/config';
 
 export default () => {
   return defineConfig({
-    plugins: [react()],
+    plugins: [
+      react({
+        babel: {
+          plugins: ['babel-plugin-react-compiler'],
+        },
+      }),
+    ],
     base: '/',
     test: {
       globals: true,
