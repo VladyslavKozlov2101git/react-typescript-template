@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
-import { mainPath } from '../../routes/paths';
+import { developerPath, mainPath } from '../../routes/paths';
 
 interface HeaderProps {
   className?: string;
@@ -21,10 +21,12 @@ const Header: FC<HeaderProps> = ({ className = '' }) => {
             <NavLink to={mainPath.dashboard.path}>{mainPath.dashboard.name}</NavLink>
           </li>
           <li>
-            <NavLink to={mainPath.examples.path}>{mainPath.examples.name}</NavLink>
+            <NavLink to={developerPath.examples.path}>{developerPath.examples.name}</NavLink>
           </li>
           <li>
-            <NavLink to={mainPath.recomendations.path}>{mainPath.recomendations.name}</NavLink>
+            <NavLink to={developerPath.recomendations.path}>
+              {developerPath.recomendations.name}
+            </NavLink>
           </li>
         </nav>
       </div>
