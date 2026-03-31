@@ -13,7 +13,7 @@
     "react/exhaustive-deps": "off",
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": "warn",
-    "max-lines": ["error", { "max": 400, "skipBlankLines": true, "skipComments": true }],
+    "max-lines": ["error", { "max": 250, "skipBlankLines": true, "skipComments": true }],
     "unicorn/filename-case": "off",
     "react/no-array-index-key": "off",
     "sort-imports": "off",
