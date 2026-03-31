@@ -24,6 +24,35 @@
     "unicorn/no-nested-ternary": "off",
     "unicorn/no-null": "off",
     "id-length": "off",
-    "max-lines-per-function": "off"
+    "max-lines-per-function": "off",
+
+    "unicorn/no-empty-file": "off",
+
+    "sort-keys": "off",
+    "arrow-body-style": "off",
+    "capitalized-comments": "off",
+    "func-names": "off",
+    "func-style": "off",
+    "curly": "off",
+    "require-await": "off",
+    "max-statements": "off",
+
+    "typescript/consistent-type-imports": "off",
+    "typescript/consistent-indexed-object-style": "off",
+
+    "react/jsx-props-no-spreading": "off",
+    "react/self-closing-comp": "off",
+    "react/jsx-boolean-value": "off",
+    "react/jsx-curly-brace-presence": "off",
+    "react/jsx-fragments": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/state-in-constructor": "off",
+
+    "unicorn/prefer-global-this": "off",
+    "unicorn/prefer-spread": "off",
+    "unicorn/catch-error-name": "off",
+    "unicorn/prefer-query-selector": "off",
+    "unicorn/prefer-logical-operator-over-ternary": "off",
+    "unicorn/no-console-spaces": "off"
   }
 }
