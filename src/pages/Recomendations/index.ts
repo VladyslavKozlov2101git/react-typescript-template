@@ -1,3 +1,3 @@
-import Recomendations from './Recomendations';
+import Recomendations from "./Recomendations";
 
 export default Recomendations;

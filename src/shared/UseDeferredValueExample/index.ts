@@ -1,3 +1,3 @@
-import UseDeferredValueExample from './UseDeferredValueExample';
+import UseDeferredValueExample from "./UseDeferredValueExample";
 
 export default UseDeferredValueExample;

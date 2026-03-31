@@ -1,3 +1,3 @@
-import UseOnClickOutsideExample from './UseOnClickOutsideExample';
+import UseOnClickOutsideExample from "./UseOnClickOutsideExample";
 
 export default UseOnClickOutsideExample;

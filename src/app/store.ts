@@ -1,21 +1,21 @@
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
-import { Middleware, configureStore } from '@reduxjs/toolkit';
-import axios, { AxiosError } from 'axios';
-import Cookies from 'js-cookie';
+import { Middleware, configureStore } from "@reduxjs/toolkit";
+import axios, { AxiosError } from "axios";
+import Cookies from "js-cookie";
 
-import { rootReducer } from './rootReducer';
+import { rootReducer } from "./rootReducer";
 
-import { authPath } from '../routes/paths';
+import { authPath } from "../routes/paths";
 
-import { cachedAPI } from '@services/cachedAPI';
+import { cachedAPI } from "@services/cachedAPI";
 
 const authMiddleware: Middleware = () => (next) => (action) => {
-  const token = Cookies.get('token');
+  const token = Cookies.get("token");
   if (token) {
-    axios.defaults.headers.common['Authorization'] = `Token ${token}`;
+    axios.defaults.headers.common["Authorization"] = `Token ${token}`;
   } else {
-    delete axios.defaults.headers.common['Authorization'];
+    delete axios.defaults.headers.common["Authorization"];
   }
   return next(action);
 };
@@ -29,7 +29,7 @@ axios.interceptors.response.use(
       const { status } = error.response;
 
       if (status === 401) {
-        Cookies.remove('token');
+        Cookies.remove("token");
         localStorage.clear();
         sessionStorage.clear();
         if (window.location.pathname !== authPath.signIn.path) {
@@ -37,7 +37,7 @@ axios.interceptors.response.use(
         }
       }
       if (status === 500 || status === 404) {
-        toast.error('Oops! Something went wrong. Please try again or contact support!');
+        toast.error("Oops! Something went wrong. Please try again or contact support!");
       }
     }
     return Promise.reject(error);
@@ -55,4 +55,4 @@ export const setupStore = () => {
 export const store = setupStore();
 
 export type AppStore = ReturnType<typeof setupStore>;
-export type AppDispatch = AppStore['dispatch'];
+export type AppDispatch = AppStore["dispatch"];

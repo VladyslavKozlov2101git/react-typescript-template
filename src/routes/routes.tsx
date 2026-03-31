@@ -1,19 +1,19 @@
-import { Outlet, createBrowserRouter, redirect } from 'react-router-dom';
+import { Outlet, createBrowserRouter, redirect } from "react-router-dom";
 
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 
-import { authPath, mainPath } from './paths';
+import { authPath, mainPath } from "./paths";
 
-import AuthContainer from '@containers/AuthContainer';
-import MainContainer from '@containers/MainContainer';
+import AuthContainer from "@containers/AuthContainer";
+import MainContainer from "@containers/MainContainer";
 
-import ErrorPage from '@pages/ErrorPage';
+import ErrorPage from "@pages/ErrorPage";
 
-const token = Cookies.get('token');
+const token = Cookies.get("token");
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     errorElement: <ErrorPage />,
     element: <Outlet />,
     children: [
@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
         loader: async () => redirect(token ? mainPath.dashboard.path : authPath.signIn.path),
       },
       {
-        path: '/auth',
+        path: "/auth",
         element: <AuthContainer />,
         caseSensitive: true,
         children: [
@@ -31,19 +31,19 @@ export const router = createBrowserRouter([
             loader: async () => redirect(authPath.signIn.path),
           },
           {
-            path: 'sign-in',
+            path: "sign-in",
             element: <h2>sign-in</h2>,
             caseSensitive: true,
           },
           {
-            path: 'sign-up',
+            path: "sign-up",
             element: <h2>sign-up</h2>,
             caseSensitive: true,
           },
         ],
       },
       {
-        path: '/main',
+        path: "/main",
         element: <MainContainer />,
         caseSensitive: true,
         children: [

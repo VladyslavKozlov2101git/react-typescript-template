@@ -1,12 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
 
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from "vitest";
 
-import Dashboard from './Dashboard';
+import Dashboard from "./Dashboard";
 
-describe('Dashboard', () => {
-  it('should render', () => {
+describe("Dashboard", () => {
+  it("should render", () => {
     render(<Dashboard />);
-    expect(screen.getByTestId('dashboard')).toBeInTheDocument();
+    expect(screen.getByTestId("dashboard")).toBeInTheDocument();
   });
 });

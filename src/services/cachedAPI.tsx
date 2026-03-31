@@ -1,19 +1,19 @@
-import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
+import { BaseQueryFn, createApi } from "@reduxjs/toolkit/query/react";
 
-import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig } from "axios";
 
-import { WORKER } from '@models/Workers.model';
+import { WORKER } from "@models/Workers.model";
 
 const baseURL = `${import.meta.env.VITE_REACT_APP_API_URL}`;
 
 const axiosBaseQuery =
-  <TData = unknown,>(): BaseQueryFn<
+  <TData = unknown>(): BaseQueryFn<
     {
       baseUrl: string;
       url: string;
-      method: AxiosRequestConfig['method'];
+      method: AxiosRequestConfig["method"];
       data?: TData;
-      headers?: AxiosRequestConfig['headers'];
+      headers?: AxiosRequestConfig["headers"];
     },
     unknown,
     { status: number; data: unknown }
@@ -41,7 +41,7 @@ const axiosBaseQuery =
 
 export const cachedAPI = createApi({
   baseQuery: axiosBaseQuery(),
-  tagTypes: ['Reports', 'Workers', 'AllReports'],
+  tagTypes: ["Reports", "Workers", "AllReports"],
   endpoints: (builder) => ({
     //GET WORKERS
 
@@ -53,15 +53,15 @@ export const cachedAPI = createApi({
         }
 
         const queryString = new URLSearchParams(queryParams).toString();
-        const url = `workers/${queryString ? `?${queryString}` : ''}`;
+        const url = `workers/${queryString ? `?${queryString}` : ""}`;
 
         return {
           baseUrl: baseURL,
           url,
-          method: 'GET',
+          method: "GET",
         };
       },
-      providesTags: (_) => ['Workers'],
+      providesTags: (_) => ["Workers"],
     }),
 
     updateWorkers: builder.mutation<WORKER[], { free?: string }>({
@@ -72,15 +72,15 @@ export const cachedAPI = createApi({
         }
 
         const queryString = new URLSearchParams(queryParams).toString();
-        const url = `workers/${queryString ? `?${queryString}` : ''}`;
+        const url = `workers/${queryString ? `?${queryString}` : ""}`;
 
         return {
           baseUrl: baseURL,
           url,
-          method: 'GET',
+          method: "GET",
         };
       },
-      invalidatesTags: (_) => ['Workers'],
+      invalidatesTags: (_) => ["Workers"],
     }),
   }),
 });

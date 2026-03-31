@@ -1,3 +1,3 @@
-import SkeletonItem from './SkeletonItem';
+import SkeletonItem from "./SkeletonItem";
 
 export default SkeletonItem;

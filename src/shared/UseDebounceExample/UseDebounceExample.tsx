@@ -1,13 +1,13 @@
-import { FC, ChangeEvent, useEffect, useState } from 'react';
-import styles from './UseDebounceExample.module.scss';
-import { useDebounce } from '../../helpers/hooks';
+import { FC, ChangeEvent, useEffect, useState } from "react";
+import styles from "./UseDebounceExample.module.scss";
+import { useDebounce } from "../../helpers/hooks";
 
 interface UseDebounceExampleProps {
   className?: string;
 }
 
-const UseDebounceExample: FC<UseDebounceExampleProps> = ({ className = '' }) => {
-  const [value, setValue] = useState<string>('');
+const UseDebounceExample: FC<UseDebounceExampleProps> = ({ className = "" }) => {
+  const [value, setValue] = useState<string>("");
   const debouncedValue = useDebounce<string>(value, 500);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,7 @@ const UseDebounceExample: FC<UseDebounceExampleProps> = ({ className = '' }) => 
       <input
         className={styles.input}
         type="text"
-        placeholder={'Please enter some text'}
+        placeholder={"Please enter some text"}
         value={value}
         onChange={handleChange}
       />

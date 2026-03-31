@@ -1,19 +1,19 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import styles from './Examples.module.scss';
+import styles from "./Examples.module.scss";
 
 import {
   Skeleton,
   UseDebounceExample,
   UseDeferredValueExample,
   UseOnClickOutsideExample,
-} from '../../shared/index';
+} from "../../shared/index";
 
 interface ExamplesProps {
   className?: string;
 }
 
-const Examples: FC<ExamplesProps> = ({ className = '' }) => {
+const Examples: FC<ExamplesProps> = ({ className = "" }) => {
   return (
     <div className={`${styles.root} ${className} `}>
       <h2 className="mt16">Custom hooks examples</h2>

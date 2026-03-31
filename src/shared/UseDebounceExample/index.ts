@@ -1,3 +1,3 @@
-import UseDebounceExample from './UseDebounceExample';
+import UseDebounceExample from "./UseDebounceExample";
 
 export default UseDebounceExample;

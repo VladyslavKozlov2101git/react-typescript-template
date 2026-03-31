@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+import { FC } from "react";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
-import styles from './SkeletonItem.module.scss';
+import styles from "./SkeletonItem.module.scss";
 
 interface SkeletonItemProps {
   className?: string;
@@ -13,7 +13,7 @@ interface SkeletonItemProps {
 }
 
 const SkeletonItem: FC<SkeletonItemProps> = ({
-  className = '',
+  className = "",
   number = 1,
   width = 100,
   height,

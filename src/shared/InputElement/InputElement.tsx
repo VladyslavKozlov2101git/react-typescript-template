@@ -1,17 +1,17 @@
-import { ForwardRefRenderFunction, forwardRef, useId, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { ForwardRefRenderFunction, forwardRef, useId, useState } from "react";
+import { Link } from "react-router-dom";
 
-import styles from './InputElement.module.scss';
+import styles from "./InputElement.module.scss";
 
-import EyeOff from '../../assets/icons/EyeOff';
-import EyeOn from '../../assets/icons/EyeOn';
-import { authPath } from '../../routes/paths';
+import EyeOff from "../../assets/icons/EyeOff";
+import EyeOn from "../../assets/icons/EyeOn";
+import { authPath } from "../../routes/paths";
 
 interface InputElementProps {
   className?: string;
   label?: string;
   placeholder?: string;
-  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'file' | 'textarea' | 'checkbox';
+  type?: "text" | "password" | "email" | "number" | "tel" | "file" | "textarea" | "checkbox";
   onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   error?: string;
   value?: string | number | readonly string[] | undefined;
@@ -31,13 +31,13 @@ const InputElement: ForwardRefRenderFunction<
   InputElementProps
 > = (
   {
-    className = '',
-    label = '',
-    placeholder = '',
-    type = 'text',
+    className = "",
+    label = "",
+    placeholder = "",
+    type = "text",
     onChange,
-    error = '',
-    value = '',
+    error = "",
+    value = "",
     withLabel = false,
     disabled = false,
     isPassword = false,
@@ -45,8 +45,8 @@ const InputElement: ForwardRefRenderFunction<
     required = false,
     checked = false,
     isForgot = false,
-    min = '',
-    max = '',
+    min = "",
+    max = "",
     ...props
   },
   ref,
@@ -61,7 +61,7 @@ const InputElement: ForwardRefRenderFunction<
 
   const id = useId();
   const renderInputField = () => {
-    if (type === 'textarea') {
+    if (type === "textarea") {
       return (
         <textarea
           ref={ref as React.RefObject<HTMLTextAreaElement>}
@@ -83,10 +83,10 @@ const InputElement: ForwardRefRenderFunction<
         ref={ref as React.RefObject<HTMLInputElement>}
         value={value as string}
         onChange={handleChange}
-        className={`${type === 'file' ? styles.fileInput : styles.input} ${
-          type === 'checkbox' && styles.checkboxInput
+        className={`${type === "file" ? styles.fileInput : styles.input} ${
+          type === "checkbox" && styles.checkboxInput
         } ${error && styles.input__error} ${isPassword && styles.input__password}`}
-        type={isPassword && !showPassword ? 'password' : type}
+        type={isPassword && !showPassword ? "password" : type}
         placeholder={placeholder}
         disabled={disabled}
         required={required}

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import clsx from 'clsx';
+import clsx from "clsx";
 
-import styles from './ButtonElement.module.scss';
+import styles from "./ButtonElement.module.scss";
 
 interface ButtonElementProps {
   className?: string;
@@ -13,16 +13,16 @@ interface ButtonElementProps {
   isLoading?: boolean;
   target?: string;
   icon?: React.ReactNode;
-  type?: 'button' | 'submit' | 'reset';
-  view?: 'primary' | 'secondary' | 'link' | 'outline';
-  size?: 'small' | 'medium' | 'large';
+  type?: "button" | "submit" | "reset";
+  view?: "primary" | "secondary" | "link" | "outline";
+  size?: "small" | "medium" | "large";
   dataTooltipId?: string;
   disabled?: boolean;
 }
 
 const ButtonElement: React.FC<ButtonElementProps> = ({
-  className = '',
-  text = 'text',
+  className = "",
+  text = "text",
   isLoading = false,
   dataTooltipId,
   onClick,
@@ -30,8 +30,8 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
   target,
   icon,
   type,
-  size = 'medium',
-  view = 'primary',
+  size = "medium",
+  view = "primary",
   disabled = false,
 }) => {
   const buttonClasses = clsx(styles.root, styles[view], className, size);
@@ -54,9 +54,9 @@ const ButtonElement: React.FC<ButtonElementProps> = ({
         <button
           data-testid="button-element"
           className={buttonClasses}
-          type={type ? type : 'button'}
+          type={type ? type : "button"}
           onClick={onClick}
-          data-tooltip-id={dataTooltipId || ''}
+          data-tooltip-id={dataTooltipId || ""}
           disabled={disabled}
         >
           {isLoading ? (

@@ -1,8 +1,9 @@
 {
   "name": "react-typescript-template",
-  "private": true,
   "version": "0.0.1",
+  "private": true,
   "author": "VladislavKozlov <vladyslavkozlov2101@gmail.com> (https://www.linkedin.com/in/vladyslav-kozlov-1a0963115/)",
+  "type": "module",
   "scripts": {
     "dev": "vite --host",
     "plop": "plop",

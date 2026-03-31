@@ -1,23 +1,23 @@
-import { FC } from 'react';
-import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import { FC } from "react";
+import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
-import clsx from 'clsx';
+import clsx from "clsx";
 
-import styles from './ErrorPage.module.scss';
+import styles from "./ErrorPage.module.scss";
 
 interface ErrorPageProps {
   className?: string;
 }
 
-const ErrorPage: FC<ErrorPageProps> = ({ className = '' }) => {
+const ErrorPage: FC<ErrorPageProps> = ({ className = "" }) => {
   const error = useRouteError();
   console.log(error);
 
-  if (isRouteErrorResponse(error) && typeof error.data === 'string') {
+  if (isRouteErrorResponse(error) && typeof error.data === "string") {
     return (
       <div className={clsx(styles.root, className)}>
         <h1>{error.status}</h1>
-        <h2>{error.statusText || 'An error occurred'}</h2>
+        <h2>{error.statusText || "An error occurred"}</h2>
         <p>{error.data}</p>
       </div>
     );

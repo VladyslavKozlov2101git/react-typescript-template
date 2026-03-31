@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchUsers } from './UsersActions';
+import { fetchUsers } from "./UsersActions";
 
-import { USER } from '@models/User.model';
+import { USER } from "@models/User.model";
 
 interface UsersState {
   users: USER[];
@@ -14,12 +14,12 @@ interface UsersState {
 const initialState: UsersState = {
   users: [],
   isLoading: false,
-  error: '',
+  error: "",
   count: 0,
 };
 
 export const usersSlice = createSlice({
-  name: 'SIGN_IN',
+  name: "SIGN_IN",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -27,7 +27,7 @@ export const usersSlice = createSlice({
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.users = action.payload;
-        state.error = '';
+        state.error = "";
       })
       .addCase(fetchUsers.pending, (state) => {
         state.isLoading = true;

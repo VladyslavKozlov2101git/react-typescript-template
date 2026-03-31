@@ -1,15 +1,15 @@
-import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { FC } from "react";
+import { NavLink } from "react-router-dom";
 
-import styles from './Header.module.scss';
+import styles from "./Header.module.scss";
 
-import { mainPath } from '../../routes/paths';
+import { mainPath } from "../../routes/paths";
 
 interface HeaderProps {
   className?: string;
 }
 
-const Header: FC<HeaderProps> = ({ className = '' }) => {
+const Header: FC<HeaderProps> = ({ className = "" }) => {
   return (
     <header className={`${styles.root} ${className}`}>
       <div className="container">

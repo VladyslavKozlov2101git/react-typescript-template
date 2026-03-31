@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import clsx from 'clsx';
+import clsx from "clsx";
 
-import styles from './ErrorFallback.module.scss';
+import styles from "./ErrorFallback.module.scss";
 
 interface ErrorFallbackProps {
   error: Error;
@@ -10,7 +10,7 @@ interface ErrorFallbackProps {
   className?: string;
 }
 
-const ErrorFallback: FC<ErrorFallbackProps> = ({ error, resetErrorBoundary, className = '' }) => {
+const ErrorFallback: FC<ErrorFallbackProps> = ({ error, resetErrorBoundary, className = "" }) => {
   return (
     <div className={clsx(styles.root, className)} role="alert">
       <h2>Something went wrong</h2>

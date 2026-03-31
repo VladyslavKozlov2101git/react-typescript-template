@@ -4,7 +4,5 @@
     "oxlint -c .oxlintrc.json --fix",
     "prettier --write"
   ],
-  "src/**/*.{css,scss,html,json}": [
-    "prettier --write"
-  ]
+  "src/**/*.{css,scss,html,json}": ["prettier --write"]
 }

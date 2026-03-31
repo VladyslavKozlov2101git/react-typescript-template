@@ -18,11 +18,7 @@
       "@routes": ["routes/paths"]
     },
 
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -40,10 +36,10 @@
     "noFallthroughCasesInSwitch": true,
     "skipDefaultLibCheck": true
   },
-  "include": [
-    "src"
-  ],
-  "references": [{
-    "path": "./tsconfig.node.json"
-  }]
+  "include": ["src"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

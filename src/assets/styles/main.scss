@@ -1,6 +1,6 @@
-@use 'reset' as *;
-@use 'vars' as *;
-@use 'mixins' as *;
+@use "reset" as *;
+@use "vars" as *;
+@use "mixins" as *;
 
 body {
   font-family: var(--font);
@@ -201,8 +201,8 @@ h3,
   }
 }
 
-input[type='password']::-ms-reveal,
-input[type='password']::-ms-clear {
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
   display: none;
 }
 
@@ -238,7 +238,7 @@ input[type='password']::-ms-clear {
 }
 .loader::after,
 .loader::before {
-  content: '';
+  content: "";
   box-sizing: border-box;
   position: absolute;
   left: 0;

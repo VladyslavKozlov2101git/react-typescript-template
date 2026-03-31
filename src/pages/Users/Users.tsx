@@ -1,16 +1,16 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect } from "react";
 
-import styles from './Users.module.scss';
+import styles from "./Users.module.scss";
 
-import { useAppDispatch, useAppSelector } from '../../app/reduxHooks';
+import { useAppDispatch, useAppSelector } from "../../app/reduxHooks";
 
-import { fetchUsers } from '@redux/UsersSlice/UsersActions';
+import { fetchUsers } from "@redux/UsersSlice/UsersActions";
 
 interface UsersProps {
   className?: string;
 }
 
-const Users: FC<UsersProps> = ({ className = '' }) => {
+const Users: FC<UsersProps> = ({ className = "" }) => {
   const { isLoading, error, users } = useAppSelector((state) => state.usersReducer);
 
   const dispatch = useAppDispatch();

@@ -1,5 +1,5 @@
-import { RefObject, useCallback, useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
+import { RefObject, useCallback, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export function useOnClickOutside<T extends HTMLElement>(
   ref: RefObject<T>,
@@ -14,12 +14,12 @@ export function useOnClickOutside<T extends HTMLElement>(
       handler(event);
     };
 
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
 
     return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
     };
   }, [ref, handler]);
 }
@@ -49,7 +49,7 @@ export const useToggle = (initialState = false): [boolean, () => void] => {
 //Usage:const device = useDeviceDetection();
 
 export const useDeviceDetection = () => {
-  const [device, setDevice] = useState('');
+  const [device, setDevice] = useState("");
 
   useEffect(() => {
     const handleDeviceDetection = () => {
@@ -58,19 +58,19 @@ export const useDeviceDetection = () => {
       const isTablet = /(ipad|tablet|playbook|silk)|(android(?!.*mobile))/g.test(userAgent);
 
       if (isMobile) {
-        setDevice('Mobile');
+        setDevice("Mobile");
       } else if (isTablet) {
-        setDevice('Tablet');
+        setDevice("Tablet");
       } else {
-        setDevice('Desktop');
+        setDevice("Desktop");
       }
     };
 
     handleDeviceDetection();
-    window.addEventListener('resize', handleDeviceDetection);
+    window.addEventListener("resize", handleDeviceDetection);
 
     return () => {
-      window.removeEventListener('resize', handleDeviceDetection);
+      window.removeEventListener("resize", handleDeviceDetection);
     };
   }, []);
 
@@ -93,7 +93,7 @@ const useClipboard = (initialText: string, type: string) => {
         id: type,
       });
     } catch (error) {
-      console.error('Failed to copy text to clipboard: ', error);
+      console.error("Failed to copy text to clipboard: ", error);
       setIsCopied(false);
     }
   };

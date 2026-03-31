@@ -1,23 +1,23 @@
-import { FC, Fragment, ReactNode, Suspense, useEffect } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { FC, Fragment, ReactNode, Suspense, useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
-import clsx from 'clsx';
+import clsx from "clsx";
 
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 
-import styles from './AuthContainer.module.scss';
+import styles from "./AuthContainer.module.scss";
 
-import { mainPath } from '../../routes/paths';
+import { mainPath } from "../../routes/paths";
 
-import LoaderComponent from '@shared/LoaderComponent';
+import LoaderComponent from "@shared/LoaderComponent";
 
 interface AuthContainerProps {
   className?: string;
   children?: ReactNode;
 }
 
-const AuthContainer: FC<AuthContainerProps> = ({ className = '' }) => {
-  const token = Cookies.get('token');
+const AuthContainer: FC<AuthContainerProps> = ({ className = "" }) => {
+  const token = Cookies.get("token");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const AuthContainer: FC<AuthContainerProps> = ({ className = '' }) => {
   return (
     <Fragment>
       <header className={styles.header}>Header</header>
-      <main className={clsx(styles.root, className, 'container')}>
+      <main className={clsx(styles.root, className, "container")}>
         <Suspense fallback={<LoaderComponent />}>
           <Outlet />
         </Suspense>

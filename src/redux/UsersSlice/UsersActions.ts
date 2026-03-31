@@ -1,11 +1,11 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-import { USER } from '@models/User.model';
+import { USER } from "@models/User.model";
 
-export const fetchUsers = createAsyncThunk('user/fetchAll', async (_, thunkAPI) => {
+export const fetchUsers = createAsyncThunk("user/fetchAll", async (_, thunkAPI) => {
   try {
-    const response = await axios.get<USER[]>('https://jsonplaceholder.typicode.com/users');
+    const response = await axios.get<USER[]>("https://jsonplaceholder.typicode.com/users");
     return response.data;
   } catch (e: any) {
     return thunkAPI.rejectWithValue(e);
