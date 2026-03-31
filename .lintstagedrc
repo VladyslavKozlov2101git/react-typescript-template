@@ -1,3 +1,10 @@
 {
-  "src/**/*.{js,jsx,ts,tsx}": ["eslint", "eslint --fix"]
+  "src/**/*.{js,jsx,ts,tsx}": [
+    "oxfmt --write",
+    "oxlint -c .oxlintrc.json --fix",
+    "prettier --write"
+  ],
+  "src/**/*.{css,scss,html,json}": [
+    "prettier --write"
+  ]
 }

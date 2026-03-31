@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "unicorn"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "pedantic": "warn",
+    "perf": "warn",
+    "style": "warn"
+  },
+  "rules": {
+    "typescript/no-unused-vars": "off",
+    "react/exhaustive-deps": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "warn",
+    "max-lines": ["error", { "max": 400, "skipBlankLines": true, "skipComments": true }],
+    "unicorn/filename-case": "off",
+    "react/no-array-index-key": "off",
+    "sort-imports": "off",
+    "react/jsx-max-depth": "off",
+    "no-magic-numbers": "off",
+    "no-ternary": "off",
+    "no-nested-ternary": "off",
+    "unicorn/no-nested-ternary": "off",
+    "unicorn/no-null": "off",
+    "id-length": "off",
+    "max-lines-per-function": "off"
+  }
+}
