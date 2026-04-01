@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Provider } from "react-redux";
@@ -15,10 +16,12 @@ interface AppProps {
 
 const App: FC<AppProps> = () => {
   return (
-    <Provider store={store}>
-      <RouterProvider router={router} />
-      <Toaster position="bottom-right" />
-    </Provider>
+    <HelmetProvider>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+        <Toaster position="bottom-right" />
+      </Provider>
+    </HelmetProvider>
   );
 };
 

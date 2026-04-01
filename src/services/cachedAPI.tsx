@@ -1,46 +1,55 @@
 import { BaseQueryFn, createApi } from "@reduxjs/toolkit/query/react";
 
-import axios, { AxiosError, AxiosRequestConfig } from "axios";
+import { HTTPError } from "ky";
 
 import { WORKER } from "@models/Workers.model";
 
-const baseURL = `${import.meta.env.VITE_REACT_APP_API_URL}`;
+import { api } from "./api";
 
-const axiosBaseQuery =
-  <TData = unknown>(): BaseQueryFn<
+const kyBaseQuery =
+  (): BaseQueryFn<
     {
-      baseUrl: string;
       url: string;
-      method: AxiosRequestConfig["method"];
-      data?: TData;
-      headers?: AxiosRequestConfig["headers"];
+      method: string;
+      data?: unknown;
+      params?: Record<string, string | number | boolean>;
+      headers?: Record<string, string>;
     },
     unknown,
     { status: number; data: unknown }
   > =>
-  async ({ baseUrl, url, method, data, headers }) => {
+  async ({ url, method, data, params, headers }) => {
     try {
-      const result = await axios({
-        url: baseUrl + url,
-        method,
-        data,
+      const response = await api(url, {
+        method: method || "get",
+        json: data,
+        searchParams: params,
         headers,
       });
-      return { data: result.data };
-    } catch (axiosError) {
-      const err = axiosError as AxiosError;
+
+      return { data: await response.json() };
+    } catch (error) {
+      if (error instanceof HTTPError) {
+        const { response } = error;
+        return {
+          error: {
+            status: response.status,
+            data: (await response.json()) || response.statusText,
+          },
+        };
+      }
 
       return {
         error: {
-          status: err.response?.status || 500,
-          data: err.response?.data || err.message,
+          status: 500,
+          data: (error as Error).message,
         },
       };
     }
   };
 
 export const cachedAPI = createApi({
-  baseQuery: axiosBaseQuery(),
+  baseQuery: kyBaseQuery(),
   tagTypes: ["Reports", "Workers", "AllReports"],
   endpoints: (builder) => ({
     //GET WORKERS
@@ -56,9 +65,8 @@ export const cachedAPI = createApi({
         const url = `workers/${queryString ? `?${queryString}` : ""}`;
 
         return {
-          baseUrl: baseURL,
           url,
-          method: "GET",
+          method: "get",
         };
       },
       providesTags: (_) => ["Workers"],
@@ -75,9 +83,8 @@ export const cachedAPI = createApi({
         const url = `workers/${queryString ? `?${queryString}` : ""}`;
 
         return {
-          baseUrl: baseURL,
           url,
-          method: "GET",
+          method: "get",
         };
       },
       invalidatesTags: (_) => ["Workers"],

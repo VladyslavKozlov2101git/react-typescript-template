@@ -1,12 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
 import { USER } from "@models/User.model";
 
+import { jsonPlaceholderApi } from "@services/api";
+
 export const fetchUsers = createAsyncThunk("user/fetchAll", async (_, thunkAPI) => {
   try {
-    const response = await axios.get<USER[]>("https://jsonplaceholder.typicode.com/users");
-    return response.data;
+    const data = await jsonPlaceholderApi.get("users").json<USER[]>();
+    return data;
   } catch (e: any) {
     return thunkAPI.rejectWithValue(e);
   }
