@@ -1,9 +1,9 @@
 import ErrorBoundary from "./ErrorBoundary";
 import PageNotFound from "./PageNotFound";
-import UseOnClickOutsideExample from "./UseOnClickOutsideExample";
+import Skeleton from "./Skeleton";
 import UseDebounceExample from "./UseDebounceExample";
 import UseDeferredValueExample from "./UseDeferredValueExample";
-import Skeleton from "./Skeleton";
+import UseOnClickOutsideExample from "./UseOnClickOutsideExample";
 
 export {
   ErrorBoundary,

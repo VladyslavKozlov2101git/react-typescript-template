@@ -1,5 +1,7 @@
-import { FC, ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
+
 import styles from "./UseDebounceExample.module.scss";
+
 import { useDebounce } from "../../helpers/hooks";
 
 interface UseDebounceExampleProps {
@@ -7,12 +9,11 @@ interface UseDebounceExampleProps {
 }
 
 const UseDebounceExample: FC<UseDebounceExampleProps> = ({ className = "" }) => {
-  const [value, setValue] = useState<string>("");
-  const debouncedValue = useDebounce<string>(value, 500);
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
+  const [value, setValue] = useState<string>(""),
+    debouncedValue = useDebounce<string>(value, 500),
+    handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+      setValue(event.target.value);
+    };
 
   // Fetch API (optional)
   useEffect(() => {

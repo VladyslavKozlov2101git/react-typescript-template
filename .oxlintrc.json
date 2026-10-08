@@ -9,6 +9,16 @@
     "style": "warn"
   },
   "rules": {
+    /* Security — OWASP A03 (injection/XSS). Errors, not warnings: these must fail the build. */
+    "react/no-danger": "error",
+    "react/no-danger-with-children": "error",
+    "react/jsx-no-script-url": "error",
+    "react/jsx-no-target-blank": "error",
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-new-func": "error",
+    "no-script-url": "error",
+
     "typescript/no-unused-vars": "off",
     "react/exhaustive-deps": "off",
     "react/react-in-jsx-scope": "off",

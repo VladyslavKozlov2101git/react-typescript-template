@@ -1,12 +1,12 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import styles from './Dashboard.module.scss';
+import styles from "./Dashboard.module.scss";
 
 interface DashboardProps {
   className?: string;
 }
 
-const Dashboard: FC<DashboardProps> = ({ className = '' }) => {
+const Dashboard: FC<DashboardProps> = ({ className = "" }) => {
   return (
     <>
       {/* React 19 hoists <title>/<meta>/<link> into <head> — no helmet needed */}

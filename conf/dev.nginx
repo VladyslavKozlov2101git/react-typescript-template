@@ -11,6 +11,13 @@ server {
     access_log /var/www/dach-frontend/logs/nginx_access.log;
     error_log /var/www/dach-frontend/logs/nginx_error.log;
 
+    # OWASP A05 — security headers. Tighten the CSP once you know your real origins.
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://dach.4-com.pro; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "geolocation=(), camera=(), microphone=()" always;
+    # Serve over TLS and add: add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
     location / {
         try_files $uri $uri/ /index.html?$args;
     }

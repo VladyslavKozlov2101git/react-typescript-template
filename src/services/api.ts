@@ -1,9 +1,9 @@
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
-import Cookies from 'js-cookie';
-import ky from 'ky';
+import Cookies from "js-cookie";
+import ky from "ky";
 
-import { authPath } from '../routes/paths';
+import { authPath } from "../routes/paths";
 
 const baseURL = `${import.meta.env.VITE_REACT_APP_API_URL}`;
 
@@ -12,9 +12,9 @@ export const api = ky.create({
   hooks: {
     beforeRequest: [
       ({ request }) => {
-        const token = Cookies.get('token');
+        const token = Cookies.get("token");
         if (token) {
-          request.headers.set('Authorization', `Token ${token}`);
+          request.headers.set("Authorization", `Token ${token}`);
         }
       },
     ],
@@ -24,7 +24,7 @@ export const api = ky.create({
           const { status } = response;
 
           if (status === 401) {
-            Cookies.remove('token');
+            Cookies.remove("token");
             localStorage.clear();
             sessionStorage.clear();
             if (window.location.pathname !== authPath.signIn.path) {
@@ -32,7 +32,7 @@ export const api = ky.create({
             }
           }
           if (status === 500 || status === 404) {
-            toast.error('Oops! Something went wrong. Please try again or contact support!');
+            toast.error("Oops! Something went wrong. Please try again or contact support!");
           }
         }
       },
@@ -42,5 +42,5 @@ export const api = ky.create({
 
 // For external APIs with different baseURL (e.g. JSONPlaceholder)
 export const jsonPlaceholderApi = ky.create({
-  prefix: 'https://jsonplaceholder.typicode.com',
+  prefix: "https://jsonplaceholder.typicode.com",
 });

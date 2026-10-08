@@ -1,6 +1,6 @@
-import { FC, ReactElement, memo, useDeferredValue, useState } from 'react';
+import { FC, ReactElement, memo, useDeferredValue, useState } from "react";
 
-import styles from './UseDeferredValueExample.module.scss';
+import styles from "./UseDeferredValueExample.module.scss";
 
 interface SlowListProps {
   text: string;
@@ -8,7 +8,7 @@ interface SlowListProps {
 
 const SlowList: FC<SlowListProps> = memo(({ text }) => {
   // Log once. The actual slowdown is inside SlowItem.
-  console.log('[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />');
+  console.log("[ARTIFICIALLY SLOW] Rendering 250 <SlowItem />");
 
   const items: ReactElement[] = [];
   for (let i = 0; i < 30; i++) {
@@ -37,7 +37,7 @@ interface UseDeferredValueExampleProps {
 }
 
 const UseDeferredValueExample: FC<UseDeferredValueExampleProps> = () => {
-  const [text, setText] = useState(''),
+  const [text, setText] = useState(""),
     deferredText = useDeferredValue(text);
   return (
     <>

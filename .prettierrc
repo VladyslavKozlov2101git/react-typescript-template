@@ -19,7 +19,7 @@
     "@routes/"
   ],
   "semi": true,
-  "singleQuote": true,
+  "singleQuote": false,
   "arrowParens": "always",
   "bracketSpacing": true,
   "editorconfig": true,

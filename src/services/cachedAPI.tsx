@@ -1,10 +1,10 @@
-import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
+import { BaseQueryFn, createApi } from "@reduxjs/toolkit/query/react";
 
-import { HTTPError } from 'ky';
+import { HTTPError } from "ky";
 
-import { api } from './api';
+import { api } from "./api";
 
-import { WORKER } from '@models/Workers.model';
+import { WORKER } from "@models/Workers.model";
 
 const kyBaseQuery =
   (): BaseQueryFn<
@@ -21,7 +21,7 @@ const kyBaseQuery =
   async ({ url, method, data, params, headers }) => {
     try {
       const response = await api(url, {
-        method: method || 'get',
+        method: method || "get",
         json: data,
         searchParams: params,
         headers,
@@ -50,7 +50,7 @@ const kyBaseQuery =
 
 export const cachedAPI = createApi({
   baseQuery: kyBaseQuery(),
-  tagTypes: ['Reports', 'Workers', 'AllReports'],
+  tagTypes: ["Reports", "Workers", "AllReports"],
   endpoints: (builder) => ({
     //GET WORKERS
 
@@ -62,14 +62,14 @@ export const cachedAPI = createApi({
         }
 
         const queryString = new URLSearchParams(queryParams).toString(),
-          url = `workers/${queryString ? `?${queryString}` : ''}`;
+          url = `workers/${queryString ? `?${queryString}` : ""}`;
 
         return {
           url,
-          method: 'get',
+          method: "get",
         };
       },
-      providesTags: (_) => ['Workers'],
+      providesTags: (_) => ["Workers"],
     }),
 
     updateWorkers: builder.mutation<WORKER[], { free?: string }>({
@@ -80,14 +80,14 @@ export const cachedAPI = createApi({
         }
 
         const queryString = new URLSearchParams(queryParams).toString(),
-          url = `workers/${queryString ? `?${queryString}` : ''}`;
+          url = `workers/${queryString ? `?${queryString}` : ""}`;
 
         return {
           url,
-          method: 'get',
+          method: "get",
         };
       },
-      invalidatesTags: (_) => ['Workers'],
+      invalidatesTags: (_) => ["Workers"],
     }),
   }),
 });

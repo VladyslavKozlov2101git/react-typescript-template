@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { USER } from "@models/User.model";
-
 import { jsonPlaceholderApi } from "@services/api";
+
+import { USER } from "@models/User.model";
 
 export const fetchUsers = createAsyncThunk("user/fetchAll", async (_, thunkAPI) => {
   try {
