@@ -1,18 +1,16 @@
-import { FC } from "react";
-import { Helmet } from "react-helmet-async";
+import { FC } from 'react';
 
-import styles from "./Dashboard.module.scss";
+import styles from './Dashboard.module.scss';
 
 interface DashboardProps {
   className?: string;
 }
 
-const Dashboard: FC<DashboardProps> = ({ className = "" }) => {
+const Dashboard: FC<DashboardProps> = ({ className = '' }) => {
   return (
     <>
-      <Helmet>
-        <title>Dashboard | React Template</title>
-      </Helmet>
+      {/* React 19 hoists <title>/<meta>/<link> into <head> — no helmet needed */}
+      <title>Dashboard | React Template</title>
       <div className={`${styles.root} ${className}`} data-testid="dashboard">
         Dashboard
       </div>

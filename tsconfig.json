@@ -1,21 +1,20 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "baseUrl": "./src",
     "paths": {
-      "@app/*": ["app/*"],
-      "@services/*": ["services/*"],
-      "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@layouts/*": ["layouts/*"],
-      "@redux/*": ["redux/*"],
-      "@models/*": ["models/*"],
-      "@shared/*": ["shared/*"],
-      "@assets/*": ["assets/*"],
-      "@helpers/*": ["helpers/*"],
-      "@containers/*": ["containers/*"],
+      "@app/*": ["./src/app/*"],
+      "@services/*": ["./src/services/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@models/*": ["./src/models/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@containers/*": ["./src/containers/*"],
 
-      "@routes": ["routes/paths"]
+      "@routes": ["./src/routes/paths"]
     },
 
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

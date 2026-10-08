@@ -11,13 +11,6 @@ export default () => {
       environment: "jsdom",
       setupFiles: "./src/tests/setup",
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          silenceDeprecations: ["legacy-js-api"],
-        },
-      },
-    },
     resolve: {
       alias: {
         "@": "/src",
